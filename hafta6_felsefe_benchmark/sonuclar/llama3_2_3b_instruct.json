@@ -1,0 +1,23 @@
+{
+  "etiket": "llama3_2_3b_instruct",
+  "model_name": "unsloth/Llama-3.2-3B-Instruct-bnb-4bit",
+  "toplam_soru": 100,
+  "dogru_sayisi": 91,
+  "genel_basari": 91.0,
+  "sure_saniye": 24.2,
+  "kategori_basari": {
+    "19. Yüzyıl Felsefesi": 85.71,
+    "20. Yüzyıl Felsefesi": 100.0,
+    "Antik Yunan Felsefesi": 81.82,
+    "Epistemoloji": 100.0,
+    "Estetik": 87.5,
+    "Etik": 77.78,
+    "Mantık": 87.5,
+    "Metafizik ve Ontoloji": 88.89,
+    "Modern Felsefe": 100.0,
+    "Ortaçağ ve İslam Felsefesi": 100.0,
+    "Siyaset Felsefesi": 100.0,
+    "Zihin Felsefesi ve Çağdaş Felsefe": 100.0,
+    "Çağdaş Felsefe": 0.0
+  }
+}

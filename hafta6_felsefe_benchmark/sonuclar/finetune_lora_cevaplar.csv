@@ -1,0 +1,101 @@
+soru_id,kategori,cevap_verilen,dogru_cevap,dogru_mu
+1,Antik Yunan Felsefesi,A,A,True
+2,Antik Yunan Felsefesi,B,B,True
+3,Antik Yunan Felsefesi,C,C,True
+4,Antik Yunan Felsefesi,D,D,True
+5,Antik Yunan Felsefesi,E,E,True
+6,Antik Yunan Felsefesi,A,A,True
+7,Antik Yunan Felsefesi,B,B,True
+8,Antik Yunan Felsefesi,C,C,True
+9,Antik Yunan Felsefesi,D,D,True
+10,Antik Yunan Felsefesi,E,E,True
+11,Ortaçağ ve İslam Felsefesi,A,A,True
+12,Ortaçağ ve İslam Felsefesi,B,B,True
+13,Ortaçağ ve İslam Felsefesi,C,C,True
+14,Ortaçağ ve İslam Felsefesi,D,D,True
+15,Ortaçağ ve İslam Felsefesi,E,E,True
+16,Ortaçağ ve İslam Felsefesi,A,A,True
+17,Ortaçağ ve İslam Felsefesi,B,B,True
+18,Ortaçağ ve İslam Felsefesi,C,C,True
+19,Ortaçağ ve İslam Felsefesi,D,D,True
+20,Modern Felsefe,E: Metodik şüphe,E,True
+21,Modern Felsefe,A,A,True
+22,Modern Felsefe,B,B,True
+23,Modern Felsefe,C,C,True
+24,Modern Felsefe,D,D,True
+25,Modern Felsefe,E,E,True
+26,Modern Felsefe,A,A,True
+27,Modern Felsefe,B,B,True
+28,Modern Felsefe,C,C,True
+29,Epistemoloji,D,D,True
+30,Epistemoloji,E,E,True
+31,Epistemoloji,A,A,True
+32,Epistemoloji,B,B,True
+33,Epistemoloji,C,C,True
+34,Epistemoloji,D,D,True
+35,Epistemoloji,E,E,True
+36,Epistemoloji,A,A,True
+37,Epistemoloji,B,B,True
+38,Metafizik ve Ontoloji,C,C,True
+39,Metafizik ve Ontoloji,D,D,True
+40,Metafizik ve Ontoloji,E,E,True
+41,Metafizik ve Ontoloji,A,A,True
+42,Metafizik ve Ontoloji,B,B,True
+43,Metafizik ve Ontoloji,C,C,True
+44,Metafizik ve Ontoloji,D,D,True
+45,Metafizik ve Ontoloji,E,E,True
+46,Metafizik ve Ontoloji,A,A,True
+47,Etik,B,B,True
+48,Etik,C,C,True
+49,Etik,D,D,True
+50,Etik,E,E,True
+51,Etik,A,A,True
+52,Etik,B,B,True
+53,Etik,C,C,True
+54,Etik,D,D,True
+55,Etik,E,E,True
+56,Siyaset Felsefesi,A,A,True
+57,Siyaset Felsefesi,B,B,True
+58,Siyaset Felsefesi,C,C,True
+59,Siyaset Felsefesi,D,D,True
+60,Siyaset Felsefesi,E: Doğa durumundaki güvensizliği ve kaosu sona erdirip düzen,E,True
+61,Siyaset Felsefesi,A,A,True
+62,Siyaset Felsefesi,B,B,True
+63,Siyaset Felsefesi,C,C,True
+64,Siyaset Felsefesi,D,D,True
+65,Estetik,E,E,True
+66,Estetik,A,A,True
+67,Estetik,B,B,True
+68,Estetik,C,C,True
+69,Estetik,D,D,True
+70,Estetik,"E: Sanatın kendi başına, dışsal (ahlaki, siyasi, dini)",E,True
+71,Estetik,A,A,True
+72,Estetik,B,B,True
+73,Mantık,C,C,True
+74,Mantık,D,D,True
+75,Mantık,E,E,True
+76,Mantık,A,A,True
+77,Mantık,B,B,True
+78,Mantık,C,C,True
+79,Mantık,D,D,True
+80,Mantık,E,E,True
+81,Zihin Felsefesi ve Çağdaş Felsefe,A,A,True
+82,Zihin Felsefesi ve Çağdaş Felsefe,B,B,True
+83,Zihin Felsefesi ve Çağdaş Felsefe,C,C,True
+84,Zihin Felsefesi ve Çağdaş Felsefe,D,D,True
+85,Zihin Felsefesi ve Çağdaş Felsefe,E,E,True
+86,Zihin Felsefesi ve Çağdaş Felsefe,A,A,True
+87,Zihin Felsefesi ve Çağdaş Felsefe,B,B,True
+88,Zihin Felsefesi ve Çağdaş Felsefe,C,C,True
+89,Zihin Felsefesi ve Çağdaş Felsefe,D,D,True
+90,Zihin Felsefesi ve Çağdaş Felsefe,E,E,True
+91,19. Yüzyıl Felsefesi,C,C,True
+92,Antik Yunan Felsefesi,A,A,True
+93,19. Yüzyıl Felsefesi,A,A,True
+94,20. Yüzyıl Felsefesi,E: Kültürel Hegemonya,E,True
+95,Çağdaş Felsefe,B,B,True
+96,19. Yüzyıl Felsefesi,A,A,True
+97,19. Yüzyıl Felsefesi,D,D,True
+98,19. Yüzyıl Felsefesi,B,B,True
+99,19. Yüzyıl Felsefesi,A,A,True
+100,19. Yüzyıl Felsefesi,A,A,True

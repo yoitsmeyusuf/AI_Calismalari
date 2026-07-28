@@ -1,0 +1,72 @@
+# --- Gizli bilgiler ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# --- Sanal ortamlar ---
+.venv/
+venv/
+env/
+ENV/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- Eğitim çıktıları / checkpoint'ler ---
+outputs/
+runs/
+checkpoint-*/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.gguf
+
+# --- unsloth / HF / torch cache ---
+unsloth_compiled_cache/
+.cache/
+.hf_cache/
+torch_compile_debug/
+*.lock
+
+# --- Deney takibi / loglar ---
+wandb/
+mlruns/
+lightning_logs/
+*.log
+
+# --- Ham veri (kaynaktan yeniden toplanabilir) ---
+# İşlenmiş veri seti HF Hub'da; ham scraping çıktısı repoda tutulmuyor.
+**/data/raw/
+*.parquet
+*.arrow
+
+# --- Editör / IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- İşletim sistemi ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Araç yapılandırmaları / cache ---
+.claude/
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/

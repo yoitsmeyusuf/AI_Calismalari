@@ -1,0 +1,23 @@
+{
+  "etiket": "taban_model",
+  "model_name": "unsloth/Qwen3.5-4B",
+  "toplam_soru": 100,
+  "dogru_sayisi": 100,
+  "genel_basari": 100.0,
+  "sure_saniye": 51.8,
+  "kategori_basari": {
+    "19. Yüzyıl Felsefesi": 100.0,
+    "20. Yüzyıl Felsefesi": 100.0,
+    "Antik Yunan Felsefesi": 100.0,
+    "Epistemoloji": 100.0,
+    "Estetik": 100.0,
+    "Etik": 100.0,
+    "Mantık": 100.0,
+    "Metafizik ve Ontoloji": 100.0,
+    "Modern Felsefe": 100.0,
+    "Ortaçağ ve İslam Felsefesi": 100.0,
+    "Siyaset Felsefesi": 100.0,
+    "Zihin Felsefesi ve Çağdaş Felsefe": 100.0,
+    "Çağdaş Felsefe": 100.0
+  }
+}

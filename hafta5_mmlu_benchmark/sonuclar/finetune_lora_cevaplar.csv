@@ -1,0 +1,931 @@
+soru_index,bolum,cevap_verilen,dogru_mu
+0,AUZEF,A,True
+1,AUZEF,C,False
+2,AUZEF,C,True
+3,AUZEF,C,False
+4,AUZEF,E,True
+5,AUZEF,C,False
+6,AUZEF,A,False
+7,AUZEF,B,False
+8,AUZEF,B,True
+9,AUZEF,C,True
+10,AUZEF,B,True
+11,AUZEF,A,False
+12,AUZEF,B,True
+13,AUZEF,A,True
+14,AUZEF,C,False
+15,Acil Durum ve Afet Yönetimi,B,False
+16,Acil Durum ve Afet Yönetimi,A,True
+17,Acil Durum ve Afet Yönetimi,B,True
+18,Acil Durum ve Afet Yönetimi,C,False
+19,Acil Durum ve Afet Yönetimi,A,True
+20,Acil Durum ve Afet Yönetimi,B,True
+21,Acil Durum ve Afet Yönetimi,A,True
+22,Acil Durum ve Afet Yönetimi,A,True
+23,Acil Durum ve Afet Yönetimi,D,True
+24,Acil Durum ve Afet Yönetimi,C,True
+25,Acil Durum ve Afet Yönetimi,E,True
+26,Acil Durum ve Afet Yönetimi,B,True
+27,Acil Durum ve Afet Yönetimi,C,False
+28,Acil Durum ve Afet Yönetimi,B,False
+29,Acil Durum ve Afet Yönetimi,E,False
+30,Adalet,B,False
+31,Adalet,B,True
+32,Adalet,C,True
+33,Adalet,B,False
+34,Adalet,C,True
+35,Adalet,A,True
+36,Adalet,A,True
+37,Adalet,B,True
+38,Adalet,B,True
+39,Adalet,C,False
+40,Adalet,D,True
+41,Adalet,D,True
+42,Adalet,B,True
+43,Adalet,C,False
+44,Adalet,C,False
+45,Aşçılık,B,False
+46,Aşçılık,C,False
+47,Aşçılık,C,False
+48,Aşçılık,B,False
+49,Aşçılık,B,True
+50,Aşçılık,A,False
+51,Aşçılık,C,True
+52,Aşçılık,C,False
+53,Aşçılık,B,False
+54,Aşçılık,C,True
+55,Aşçılık,A,False
+56,Aşçılık,E,False
+57,Aşçılık,A,True
+58,Aşçılık,B,True
+59,Aşçılık,D,True
+60,Bankacılık ve Sigortacılık,D,True
+61,Bankacılık ve Sigortacılık,B,True
+62,Bankacılık ve Sigortacılık,B,False
+63,Bankacılık ve Sigortacılık,B,False
+64,Bankacılık ve Sigortacılık,C,False
+65,Bankacılık ve Sigortacılık,A,False
+66,Bankacılık ve Sigortacılık,D,False
+67,Bankacılık ve Sigortacılık,A,True
+68,Bankacılık ve Sigortacılık,B,False
+69,Bankacılık ve Sigortacılık,C,True
+70,Bankacılık ve Sigortacılık,E,False
+71,Bankacılık ve Sigortacılık,C,True
+72,Bankacılık ve Sigortacılık,C,False
+73,Bankacılık ve Sigortacılık,C,False
+74,Bankacılık ve Sigortacılık,E,True
+75,Büro Yönetimi ve Yönetici Asistanlığı,C,False
+76,Büro Yönetimi ve Yönetici Asistanlığı,A,True
+77,Büro Yönetimi ve Yönetici Asistanlığı,A,True
+78,Büro Yönetimi ve Yönetici Asistanlığı,B,True
+79,Büro Yönetimi ve Yönetici Asistanlığı,C,True
+80,Büro Yönetimi ve Yönetici Asistanlığı,C,False
+81,Büro Yönetimi ve Yönetici Asistanlığı,C,True
+82,Büro Yönetimi ve Yönetici Asistanlığı,A,False
+83,Büro Yönetimi ve Yönetici Asistanlığı,C,True
+84,Büro Yönetimi ve Yönetici Asistanlığı,B,True
+85,Büro Yönetimi ve Yönetici Asistanlığı,B,True
+86,Büro Yönetimi ve Yönetici Asistanlığı,D: İmzalı mektup,False
+87,Büro Yönetimi ve Yönetici Asistanlığı,C,False
+88,Büro Yönetimi ve Yönetici Asistanlığı,C,True
+89,Büro Yönetimi ve Yönetici Asistanlığı,A,True
+90,DHBT,B,True
+91,DHBT,B,True
+92,DHBT,C,False
+93,DHBT,C,True
+94,DHBT,C,False
+95,DHBT,C,False
+96,DHBT,A,True
+97,DHBT,C,False
+98,DHBT,C,True
+99,DHBT,A,False
+100,DHBT,D,True
+101,DHBT,C,True
+102,DHBT,B,True
+103,DHBT,C,True
+104,DHBT,A,True
+105,Dini Bilgiler,A,True
+106,Dini Bilgiler,C,False
+107,Dini Bilgiler,C,True
+108,Dini Bilgiler,A,True
+109,Dini Bilgiler,C,True
+110,Dini Bilgiler,A,True
+111,Dini Bilgiler,D,True
+112,Dini Bilgiler,A,False
+113,Dini Bilgiler,"Caynizm, Çin'de yaşayan bir kabile olan Caynlar tarafından kurulan bir",True
+114,Dini Bilgiler,D: Vahiy,True
+115,Dini Bilgiler,D,True
+116,Dini Bilgiler,"Din İşleri Yüksek Kurulu, din konularında araştırma yapmak, din şurasını düzen",False
+117,Dini Bilgiler,A,False
+118,Dini Bilgiler,C,True
+119,Dini Bilgiler,A,False
+120,Dış Ticaret,D,True
+121,Dış Ticaret,E,True
+122,Dış Ticaret,D,False
+123,Dış Ticaret,B,False
+124,Dış Ticaret,C,False
+125,Dış Ticaret,B,True
+126,Dış Ticaret,A,True
+127,Dış Ticaret,D,True
+128,Dış Ticaret,A,False
+129,Dış Ticaret,C,True
+130,Dış Ticaret,C,False
+131,Dış Ticaret,B,False
+132,Dış Ticaret,A,True
+133,Dış Ticaret,B,True
+134,Dış Ticaret,C,False
+135,Ehliyet Sınavı,A,True
+136,Ehliyet Sınavı,C,False
+137,Ehliyet Sınavı,B,True
+138,Ehliyet Sınavı,C,True
+139,Ehliyet Sınavı,D,True
+140,Ehliyet Sınavı,B,True
+141,Ehliyet Sınavı,D,False
+142,Ehliyet Sınavı,C,False
+143,Ehliyet Sınavı,D,False
+144,Ehliyet Sınavı,C,True
+145,Ehliyet Sınavı,A,False
+146,Ehliyet Sınavı,B,True
+147,Ehliyet Sınavı,D,True
+148,Ehliyet Sınavı,B,True
+149,Ehliyet Sınavı,C,False
+150,"Elektrik Enerjisi Üretim,İletim ve Dağıtımı",B,True
+151,"Elektrik Enerjisi Üretim,İletim ve Dağıtımı",A,True
+152,"Elektrik Enerjisi Üretim,İletim ve Dağıtımı",D,True
+153,"Elektrik Enerjisi Üretim,İletim ve Dağıtımı",D,True
+154,"Elektrik Enerjisi Üretim,İletim ve Dağıtımı",B,True
+155,"Elektrik Enerjisi Üretim,İletim ve Dağıtımı",A,False
+156,"Elektrik Enerjisi Üretim,İletim ve Dağıtımı",B,True
+157,"Elektrik Enerjisi Üretim,İletim ve Dağıtımı",C,False
+158,"Elektrik Enerjisi Üretim,İletim ve Dağıtımı",A,False
+159,"Elektrik Enerjisi Üretim,İletim ve Dağıtımı",C,True
+160,"Elektrik Enerjisi Üretim,İletim ve Dağıtımı",E,True
+161,"Elektrik Enerjisi Üretim,İletim ve Dağıtımı",A,True
+162,"Elektrik Enerjisi Üretim,İletim ve Dağıtımı",A,True
+163,"Elektrik Enerjisi Üretim,İletim ve Dağıtımı",A,False
+164,"Elektrik Enerjisi Üretim,İletim ve Dağıtımı",A,True
+165,Emlak ve Emlak Yönetimi,C,False
+166,Emlak ve Emlak Yönetimi,C,True
+167,Emlak ve Emlak Yönetimi,C,False
+168,Emlak ve Emlak Yönetimi,A,True
+169,Emlak ve Emlak Yönetimi,B,True
+170,Emlak ve Emlak Yönetimi,A,False
+171,Emlak ve Emlak Yönetimi,C,False
+172,Emlak ve Emlak Yönetimi,C,True
+173,Emlak ve Emlak Yönetimi,B,True
+174,Emlak ve Emlak Yönetimi,E,True
+175,Emlak ve Emlak Yönetimi,C,False
+176,Emlak ve Emlak Yönetimi,A,False
+177,Emlak ve Emlak Yönetimi,E,True
+178,Emlak ve Emlak Yönetimi,E,True
+179,Emlak ve Emlak Yönetimi,A,False
+180,Ev İdaresi,C,True
+181,Ev İdaresi,D,True
+182,Ev İdaresi,B,False
+183,Ev İdaresi,D,True
+184,Ev İdaresi,C,False
+185,Ev İdaresi,E,True
+186,Ev İdaresi,C,True
+187,Ev İdaresi,D,False
+188,Ev İdaresi,B,False
+189,Ev İdaresi,B,False
+190,Ev İdaresi,D,True
+191,Ev İdaresi,B,True
+192,Ev İdaresi,B,True
+193,Ev İdaresi,B,True
+194,Ev İdaresi,C,True
+195,Felsefe,B,False
+196,Felsefe,C,True
+197,Felsefe,D,True
+198,Felsefe,D,False
+199,Felsefe,A,True
+200,Felsefe,C,False
+201,Felsefe,C,False
+202,Felsefe,A,True
+203,Felsefe,B,False
+204,Felsefe,C,True
+205,Felsefe,A,True
+206,Felsefe,C,False
+207,Felsefe,B,True
+208,Felsefe,C,False
+209,Felsefe,E,True
+210,Fotoğrafçılık ve Kameramanlık,C,True
+211,Fotoğrafçılık ve Kameramanlık,B,False
+212,Fotoğrafçılık ve Kameramanlık,C,False
+213,Fotoğrafçılık ve Kameramanlık,C,False
+214,Fotoğrafçılık ve Kameramanlık,B,False
+215,Fotoğrafçılık ve Kameramanlık,B,True
+216,Fotoğrafçılık ve Kameramanlık,C,False
+217,Fotoğrafçılık ve Kameramanlık,C,False
+218,Fotoğrafçılık ve Kameramanlık,E,True
+219,Fotoğrafçılık ve Kameramanlık,C,False
+220,Fotoğrafçılık ve Kameramanlık,C,True
+221,Fotoğrafçılık ve Kameramanlık,A,True
+222,Fotoğrafçılık ve Kameramanlık,B,True
+223,Fotoğrafçılık ve Kameramanlık,A,False
+224,Fotoğrafçılık ve Kameramanlık,D,True
+225,Futbol,B,True
+226,Futbol,B,False
+227,Futbol,C,False
+228,Futbol,A,True
+229,Futbol,C,True
+230,Futbol,B,True
+231,Futbol,C,False
+232,Futbol,B,True
+233,Futbol,C,False
+234,Futbol,C,True
+235,Futbol,B,True
+236,Futbol,D,True
+237,Futbol,B,True
+238,Futbol,B,False
+239,Futbol,C,True
+240,Halkla İlişkiler ve Reklamcılık,B,True
+241,Halkla İlişkiler ve Reklamcılık,C,False
+242,Halkla İlişkiler ve Reklamcılık,C,False
+243,Halkla İlişkiler ve Reklamcılık,E,True
+244,Halkla İlişkiler ve Reklamcılık,A,True
+245,Halkla İlişkiler ve Reklamcılık,C,True
+246,Halkla İlişkiler ve Reklamcılık,B,False
+247,Halkla İlişkiler ve Reklamcılık,E,True
+248,Halkla İlişkiler ve Reklamcılık,C,False
+249,Halkla İlişkiler ve Reklamcılık,A,True
+250,Halkla İlişkiler ve Reklamcılık,C,True
+251,Halkla İlişkiler ve Reklamcılık,C,False
+252,Halkla İlişkiler ve Reklamcılık,B,True
+253,Halkla İlişkiler ve Reklamcılık,E,False
+254,Halkla İlişkiler ve Reklamcılık,C,False
+255,Halkla İlişkiler ve Tanıtım,B,False
+256,Halkla İlişkiler ve Tanıtım,A,True
+257,Halkla İlişkiler ve Tanıtım,C,True
+258,Halkla İlişkiler ve Tanıtım,B,False
+259,Halkla İlişkiler ve Tanıtım,A,True
+260,Halkla İlişkiler ve Tanıtım,C,True
+261,Halkla İlişkiler ve Tanıtım,E,True
+262,Halkla İlişkiler ve Tanıtım,A,True
+263,Halkla İlişkiler ve Tanıtım,C,False
+264,Halkla İlişkiler ve Tanıtım,C,True
+265,Halkla İlişkiler ve Tanıtım,A,False
+266,Halkla İlişkiler ve Tanıtım,C,False
+267,Halkla İlişkiler ve Tanıtım,A,True
+268,Halkla İlişkiler ve Tanıtım,B,True
+269,Halkla İlişkiler ve Tanıtım,B,False
+270,Havacılık Yönetimi,A,False
+271,Havacılık Yönetimi,C,True
+272,Havacılık Yönetimi,A,True
+273,Havacılık Yönetimi,C,False
+274,Havacılık Yönetimi,D,True
+275,Havacılık Yönetimi,D,True
+276,Havacılık Yönetimi,D,True
+277,Havacılık Yönetimi,C,False
+278,Havacılık Yönetimi,C,True
+279,Havacılık Yönetimi,C,False
+280,Havacılık Yönetimi,E,True
+281,Havacılık Yönetimi,C,False
+282,Havacılık Yönetimi,B,True
+283,Havacılık Yönetimi,C,False
+284,Havacılık Yönetimi,C,False
+285,KPSS,C,False
+286,KPSS,B,False
+287,KPSS,E,True
+288,KPSS,C,True
+289,KPSS,D,True
+290,KPSS,C,False
+291,KPSS,A,False
+292,KPSS,C,True
+293,KPSS,C,True
+294,KPSS,B,True
+295,KPSS,A,False
+296,KPSS,C,False
+297,KPSS,B,True
+298,KPSS,C,False
+299,KPSS,"E: I, II ve III",False
+300,KPSS Denemeleri,B,True
+301,KPSS Denemeleri,B,True
+302,KPSS Denemeleri,C,True
+303,KPSS Denemeleri,B,False
+304,KPSS Denemeleri,C,False
+305,KPSS Denemeleri,C,True
+306,KPSS Denemeleri,C,False
+307,KPSS Denemeleri,C,True
+308,KPSS Denemeleri,C,False
+309,KPSS Denemeleri,A,True
+310,KPSS Denemeleri,B,True
+311,KPSS Denemeleri,B,True
+312,KPSS Denemeleri,C,False
+313,KPSS Denemeleri,B,True
+314,KPSS Denemeleri,B,False
+315,Kamu Yönetimi,A,False
+316,Kamu Yönetimi,D,True
+317,Kamu Yönetimi,B,True
+318,Kamu Yönetimi,C,True
+319,Kamu Yönetimi,E,False
+320,Kamu Yönetimi,C,True
+321,Kamu Yönetimi,A,False
+322,Kamu Yönetimi,A,True
+323,Kamu Yönetimi,A,True
+324,Kamu Yönetimi,C,False
+325,Kamu Yönetimi,B,True
+326,Kamu Yönetimi,B,True
+327,Kamu Yönetimi,B,True
+328,Kamu Yönetimi,C,True
+329,Kamu Yönetimi,B,False
+330,Kim 500 Milyar İster,B,True
+331,Kim 500 Milyar İster,D,True
+332,Kim 500 Milyar İster,A,True
+333,Kim 500 Milyar İster,C,False
+334,Kim 500 Milyar İster,C,False
+335,Kim 500 Milyar İster,D,False
+336,Kim 500 Milyar İster,A,False
+337,Kim 500 Milyar İster,C,False
+338,Kim 500 Milyar İster,C,False
+339,Kim 500 Milyar İster,A,True
+340,Kim 500 Milyar İster,C,True
+341,Kim 500 Milyar İster,C,False
+342,Kim 500 Milyar İster,B,False
+343,Kim 500 Milyar İster,B,False
+344,Kim 500 Milyar İster,D,True
+345,Kültürel Miras ve Turizm,A,False
+346,Kültürel Miras ve Turizm,B,True
+347,Kültürel Miras ve Turizm,D,True
+348,Kültürel Miras ve Turizm,B,True
+349,Kültürel Miras ve Turizm,A,True
+350,Kültürel Miras ve Turizm,D,True
+351,Kültürel Miras ve Turizm,B,True
+352,Kültürel Miras ve Turizm,E,True
+353,Kültürel Miras ve Turizm,B,False
+354,Kültürel Miras ve Turizm,D,False
+355,Kültürel Miras ve Turizm,Cuvier,True
+356,Kültürel Miras ve Turizm,D,True
+357,Kültürel Miras ve Turizm,C,True
+358,Kültürel Miras ve Turizm,D,False
+359,Kültürel Miras ve Turizm,B,False
+360,Laborant ve Veteriner Sağlık,C,False
+361,Laborant ve Veteriner Sağlık,B,False
+362,Laborant ve Veteriner Sağlık,B,False
+363,Laborant ve Veteriner Sağlık,A,True
+364,Laborant ve Veteriner Sağlık,A,True
+365,Laborant ve Veteriner Sağlık,C,True
+366,Laborant ve Veteriner Sağlık,C,True
+367,Laborant ve Veteriner Sağlık,B,True
+368,Laborant ve Veteriner Sağlık,B,True
+369,Laborant ve Veteriner Sağlık,C,True
+370,Laborant ve Veteriner Sağlık,C,True
+371,Laborant ve Veteriner Sağlık,A,True
+372,Laborant ve Veteriner Sağlık,E,True
+373,Laborant ve Veteriner Sağlık,E,True
+374,Laborant ve Veteriner Sağlık,C,False
+375,Lojistik,C,True
+376,Lojistik,C,True
+377,Lojistik,B,True
+378,Lojistik,C,False
+379,Lojistik,C,True
+380,Lojistik,C,True
+381,Lojistik,C,False
+382,Lojistik,A,True
+383,Lojistik,C,False
+384,Lojistik,C,False
+385,Lojistik,C,False
+386,Lojistik,B,True
+387,Lojistik,A,True
+388,Lojistik,B,True
+389,Lojistik,E,True
+390,Maliye,D,True
+391,Maliye,B,True
+392,Maliye,B,False
+393,Maliye,B,False
+394,Maliye,B,True
+395,Maliye,C,True
+396,Maliye,C,True
+397,Maliye,A,True
+398,Maliye,A,True
+399,Maliye,C,True
+400,Maliye,C,False
+401,Maliye,C,False
+402,Maliye,D,True
+403,Maliye,A,False
+404,Maliye,E,True
+405,Marka İletişimi,C,True
+406,Marka İletişimi,C,False
+407,Marka İletişimi,B,True
+408,Marka İletişimi,B,False
+409,Marka İletişimi,B,True
+410,Marka İletişimi,"E: Mağaza personelinin bilgi, beceri ve yetenek düzeyini iş gerek",True
+411,Marka İletişimi,A,False
+412,Marka İletişimi,B,True
+413,Marka İletişimi,C,False
+414,Marka İletişimi,D,False
+415,Marka İletişimi,C,False
+416,Marka İletişimi,B,False
+417,Marka İletişimi,C,False
+418,Marka İletişimi,C,False
+419,Marka İletişimi,B,False
+420,Medya ve İletişim,D,True
+421,Medya ve İletişim,D,True
+422,Medya ve İletişim,B,True
+423,Medya ve İletişim,B,False
+424,Medya ve İletişim,E,True
+425,Medya ve İletişim,D,False
+426,Medya ve İletişim,C,False
+427,Medya ve İletişim,C,False
+428,Medya ve İletişim,B,False
+429,Medya ve İletişim,C,False
+430,Medya ve İletişim,A,True
+431,Medya ve İletişim,A,False
+432,Medya ve İletişim,A,True
+433,Medya ve İletişim,B,True
+434,Medya ve İletişim,D,True
+435,Menkul Kıymetler ve Sermaye Piyasası,C,False
+436,Menkul Kıymetler ve Sermaye Piyasası,B,True
+437,Menkul Kıymetler ve Sermaye Piyasası,A,False
+438,Menkul Kıymetler ve Sermaye Piyasası,B,True
+439,Menkul Kıymetler ve Sermaye Piyasası,E,True
+440,Menkul Kıymetler ve Sermaye Piyasası,A,False
+441,Menkul Kıymetler ve Sermaye Piyasası,C,True
+442,Menkul Kıymetler ve Sermaye Piyasası,C,True
+443,Menkul Kıymetler ve Sermaye Piyasası,C,False
+444,Menkul Kıymetler ve Sermaye Piyasası,C,False
+445,Menkul Kıymetler ve Sermaye Piyasası,B,False
+446,Menkul Kıymetler ve Sermaye Piyasası,C,True
+447,Menkul Kıymetler ve Sermaye Piyasası,B,True
+448,Menkul Kıymetler ve Sermaye Piyasası,E,True
+449,Menkul Kıymetler ve Sermaye Piyasası,B,True
+450,Muhasebe ve Vergi Uygulamaları,A,False
+451,Muhasebe ve Vergi Uygulamaları,A,True
+452,Muhasebe ve Vergi Uygulamaları,C,True
+453,Muhasebe ve Vergi Uygulamaları,D,True
+454,Muhasebe ve Vergi Uygulamaları,C,False
+455,Muhasebe ve Vergi Uygulamaları,D,True
+456,Muhasebe ve Vergi Uygulamaları,B,True
+457,Muhasebe ve Vergi Uygulamaları,C,True
+458,Muhasebe ve Vergi Uygulamaları,E,False
+459,Muhasebe ve Vergi Uygulamaları,E,True
+460,Muhasebe ve Vergi Uygulamaları,C,True
+461,Muhasebe ve Vergi Uygulamaları,C,False
+462,Muhasebe ve Vergi Uygulamaları,C,True
+463,Muhasebe ve Vergi Uygulamaları,C,True
+464,Muhasebe ve Vergi Uygulamaları,C,False
+465,Okul Öncesi Öğretmenliği,A,True
+466,Okul Öncesi Öğretmenliği,C,False
+467,Okul Öncesi Öğretmenliği,E: Sadece öğretmenin yönlendirdiği etkinliklere ağırlık verme,True
+468,Okul Öncesi Öğretmenliği,D,True
+469,Okul Öncesi Öğretmenliği,C,False
+470,Okul Öncesi Öğretmenliği,E,True
+471,Okul Öncesi Öğretmenliği,C,True
+472,Okul Öncesi Öğretmenliği,C,False
+473,Okul Öncesi Öğretmenliği,E,True
+474,Okul Öncesi Öğretmenliği,B,False
+475,Okul Öncesi Öğretmenliği,C,False
+476,Okul Öncesi Öğretmenliği,D,True
+477,Okul Öncesi Öğretmenliği,D,True
+478,Okul Öncesi Öğretmenliği,B,False
+479,Okul Öncesi Öğretmenliği,E,True
+480,Parakende Satış ve Mağaza Yöneticiliği,E,True
+481,Parakende Satış ve Mağaza Yöneticiliği,B,True
+482,Parakende Satış ve Mağaza Yöneticiliği,C,True
+483,Parakende Satış ve Mağaza Yöneticiliği,B,True
+484,Parakende Satış ve Mağaza Yöneticiliği,E,False
+485,Parakende Satış ve Mağaza Yöneticiliği,C,True
+486,Parakende Satış ve Mağaza Yöneticiliği,A,True
+487,Parakende Satış ve Mağaza Yöneticiliği,A,True
+488,Parakende Satış ve Mağaza Yöneticiliği,C,True
+489,Parakende Satış ve Mağaza Yöneticiliği,C,False
+490,Parakende Satış ve Mağaza Yöneticiliği,C,False
+491,Parakende Satış ve Mağaza Yöneticiliği,C,True
+492,Parakende Satış ve Mağaza Yöneticiliği,C,False
+493,Parakende Satış ve Mağaza Yöneticiliği,A,True
+494,Parakende Satış ve Mağaza Yöneticiliği,C,False
+495,Radyo ve Televizyon Programcılığı,C,False
+496,Radyo ve Televizyon Programcılığı,B,True
+497,Radyo ve Televizyon Programcılığı,D,True
+498,Radyo ve Televizyon Programcılığı,C,True
+499,Radyo ve Televizyon Programcılığı,C,False
+500,Radyo ve Televizyon Programcılığı,B,True
+501,Radyo ve Televizyon Programcılığı,B,True
+502,Radyo ve Televizyon Programcılığı,C,False
+503,Radyo ve Televizyon Programcılığı,C,True
+504,Radyo ve Televizyon Programcılığı,E: Müdahalecilik,False
+505,Radyo ve Televizyon Programcılığı,B,True
+506,Radyo ve Televizyon Programcılığı,A,True
+507,Radyo ve Televizyon Programcılığı,A,True
+508,Radyo ve Televizyon Programcılığı,C,False
+509,Radyo ve Televizyon Programcılığı,B,True
+510,Sağlık Kurumları İşletmeciliği,E,True
+511,Sağlık Kurumları İşletmeciliği,A,True
+512,Sağlık Kurumları İşletmeciliği,C,True
+513,Sağlık Kurumları İşletmeciliği,D,True
+514,Sağlık Kurumları İşletmeciliği,B,True
+515,Sağlık Kurumları İşletmeciliği,C,True
+516,Sağlık Kurumları İşletmeciliği,C,True
+517,Sağlık Kurumları İşletmeciliği,A,True
+518,Sağlık Kurumları İşletmeciliği,E: Demans,True
+519,Sağlık Kurumları İşletmeciliği,A,True
+520,Sağlık Kurumları İşletmeciliği,C,False
+521,Sağlık Kurumları İşletmeciliği,B,True
+522,Sağlık Kurumları İşletmeciliği,A,True
+523,Sağlık Kurumları İşletmeciliği,B,True
+524,Sağlık Kurumları İşletmeciliği,B,False
+525,Sağlık Yönetimi,D,True
+526,Sağlık Yönetimi,C,False
+527,Sağlık Yönetimi,C,True
+528,Sağlık Yönetimi,A,True
+529,Sağlık Yönetimi,C,True
+530,Sağlık Yönetimi,B,False
+531,Sağlık Yönetimi,C,False
+532,Sağlık Yönetimi,C,True
+533,Sağlık Yönetimi,C,True
+534,Sağlık Yönetimi,A,True
+535,Sağlık Yönetimi,C,False
+536,Sağlık Yönetimi,C,True
+537,Sağlık Yönetimi,A,True
+538,Sağlık Yönetimi,C,True
+539,Sağlık Yönetimi,B,False
+540,Siyer,A,True
+541,Siyer,C,False
+542,Siyer,C,False
+543,Siyer,C,False
+544,Siyer,C,False
+545,Siyer,C,False
+546,Siyer,C,True
+547,Siyer,D,True
+548,Siyer,B,True
+549,Siyer,D,False
+550,Siyer,C,False
+551,Siyer,A,True
+552,Siyer,C,True
+553,Siyer,C,True
+554,Siyer,C,True
+555,Sosyal Hizmet,C,False
+556,Sosyal Hizmet,C,False
+557,Sosyal Hizmet,C,False
+558,Sosyal Hizmet,D,True
+559,Sosyal Hizmet,C,True
+560,Sosyal Hizmet,D,True
+561,Sosyal Hizmet,C,True
+562,Sosyal Hizmet,C,True
+563,Sosyal Hizmet,D,False
+564,Sosyal Hizmet,E,True
+565,Sosyal Hizmet,C,False
+566,Sosyal Hizmet,A,True
+567,Sosyal Hizmet,B,False
+568,Sosyal Hizmet,D,True
+569,Sosyal Hizmet,C,False
+570,Sosyal Hizmetler,C,True
+571,Sosyal Hizmetler,B,False
+572,Sosyal Hizmetler,A,True
+573,Sosyal Hizmetler,A,True
+574,Sosyal Hizmetler,A,True
+575,Sosyal Hizmetler,A,True
+576,Sosyal Hizmetler,B,True
+577,Sosyal Hizmetler,A,True
+578,Sosyal Hizmetler,B,True
+579,Sosyal Hizmetler,B,True
+580,Sosyal Hizmetler,C,True
+581,Sosyal Hizmetler,A,True
+582,Sosyal Hizmetler,B,True
+583,Sosyal Hizmetler,C,False
+584,Sosyal Hizmetler,C,False
+585,Sosyoloji,C,False
+586,Sosyoloji,B,False
+587,Sosyoloji,A,True
+588,Sosyoloji,C,True
+589,Sosyoloji,B,True
+590,Sosyoloji,C,True
+591,Sosyoloji,B,True
+592,Sosyoloji,C,True
+593,Sosyoloji,C,True
+594,Sosyoloji,C,True
+595,Sosyoloji,C,False
+596,Sosyoloji,C,True
+597,Sosyoloji,B,True
+598,Sosyoloji,E,True
+599,Sosyoloji,C,False
+600,Spor Yönetimi,D,False
+601,Spor Yönetimi,A,True
+602,Spor Yönetimi,C,False
+603,Spor Yönetimi,C,True
+604,Spor Yönetimi,A,True
+605,Spor Yönetimi,C,False
+606,Spor Yönetimi,C,True
+607,Spor Yönetimi,B,True
+608,Spor Yönetimi,E,True
+609,Spor Yönetimi,C,False
+610,Spor Yönetimi,C,True
+611,Spor Yönetimi,D,True
+612,Spor Yönetimi,A,False
+613,Spor Yönetimi,A,True
+614,Spor Yönetimi,C,True
+615,TUS,C,True
+616,TUS,B,True
+617,TUS,A,True
+618,TUS,A,False
+619,TUS,B,False
+620,TUS,D,True
+621,TUS,C,False
+622,TUS,C,True
+623,TUS,C,False
+624,TUS,C,True
+625,TUS,D,True
+626,TUS,B,True
+627,TUS,B,True
+628,TUS,B,True
+629,TUS,C,False
+630,Tarih,C,False
+631,Tarih,C,False
+632,Tarih,Ceneviz,False
+633,Tarih,C,False
+634,Tarih,C,True
+635,Tarih,D,True
+636,Tarih,C,False
+637,Tarih,C,False
+638,Tarih,B,True
+639,Tarih,C,False
+640,Tarih,C,False
+641,Tarih,D,True
+642,Tarih,E,True
+643,Tarih,B,True
+644,Tarih,C,True
+645,Tarım,C,True
+646,Tarım,A,True
+647,Tarım,B,True
+648,Tarım,A,True
+649,Tarım,C,False
+650,Tarım,Ceviz,True
+651,Tarım,B,False
+652,Tarım,A,True
+653,Tarım,C,False
+654,Tarım,C,True
+655,Tarım,C,True
+656,Tarım,B,True
+657,Tarım,B,True
+658,Tarım,A,True
+659,Tarım,C,False
+660,Turizm ve Otel İşletmeciliği,A,True
+661,Turizm ve Otel İşletmeciliği,C,False
+662,Turizm ve Otel İşletmeciliği,C,True
+663,Turizm ve Otel İşletmeciliği,A,True
+664,Turizm ve Otel İşletmeciliği,C,True
+665,Turizm ve Otel İşletmeciliği,B,True
+666,Turizm ve Otel İşletmeciliği,C,True
+667,Turizm ve Otel İşletmeciliği,D,True
+668,Turizm ve Otel İşletmeciliği,C,False
+669,Turizm ve Otel İşletmeciliği,C,False
+670,Turizm ve Otel İşletmeciliği,A,True
+671,Turizm ve Otel İşletmeciliği,C,True
+672,Turizm ve Otel İşletmeciliği,A,True
+673,Turizm ve Otel İşletmeciliği,C,True
+674,Turizm ve Otel İşletmeciliği,A,True
+675,Turizm ve Seyehat Hizmetleri,B,True
+676,Turizm ve Seyehat Hizmetleri,C,False
+677,Turizm ve Seyehat Hizmetleri,B,True
+678,Turizm ve Seyehat Hizmetleri,A,True
+679,Turizm ve Seyehat Hizmetleri,B,False
+680,Turizm ve Seyehat Hizmetleri,B,False
+681,Turizm ve Seyehat Hizmetleri,E,True
+682,Turizm ve Seyehat Hizmetleri,C,False
+683,Turizm ve Seyehat Hizmetleri,D,False
+684,Turizm ve Seyehat Hizmetleri,A,True
+685,Turizm ve Seyehat Hizmetleri,B,True
+686,Turizm ve Seyehat Hizmetleri,C,False
+687,Turizm ve Seyehat Hizmetleri,D,False
+688,Turizm ve Seyehat Hizmetleri,C,True
+689,Turizm ve Seyehat Hizmetleri,D,True
+690,Türk Dili ve Edebiyatı,C,True
+691,Türk Dili ve Edebiyatı,A,True
+692,Türk Dili ve Edebiyatı,C,False
+693,Türk Dili ve Edebiyatı,B,True
+694,Türk Dili ve Edebiyatı,C,False
+695,Türk Dili ve Edebiyatı,A,False
+696,Türk Dili ve Edebiyatı,C,False
+697,Türk Dili ve Edebiyatı,B,False
+698,Türk Dili ve Edebiyatı,C,False
+699,Türk Dili ve Edebiyatı,B,False
+700,Türk Dili ve Edebiyatı,D,True
+701,Türk Dili ve Edebiyatı,A,True
+702,Türk Dili ve Edebiyatı,D,True
+703,Türk Dili ve Edebiyatı,C,False
+704,Türk Dili ve Edebiyatı,C,False
+705,Tıbbi Dökümantasyon ve Sekreterlik,D,True
+706,Tıbbi Dökümantasyon ve Sekreterlik,B,True
+707,Tıbbi Dökümantasyon ve Sekreterlik,A,True
+708,Tıbbi Dökümantasyon ve Sekreterlik,A,True
+709,Tıbbi Dökümantasyon ve Sekreterlik,E,True
+710,Tıbbi Dökümantasyon ve Sekreterlik,C,True
+711,Tıbbi Dökümantasyon ve Sekreterlik,E: Tarihsel yöntemle esere bakması ve belgelere dayanarak değerlendirme yap,True
+712,Tıbbi Dökümantasyon ve Sekreterlik,A,True
+713,Tıbbi Dökümantasyon ve Sekreterlik,C,False
+714,Tıbbi Dökümantasyon ve Sekreterlik,C,False
+715,Tıbbi Dökümantasyon ve Sekreterlik,A,True
+716,Tıbbi Dökümantasyon ve Sekreterlik,E,True
+717,Tıbbi Dökümantasyon ve Sekreterlik,E,True
+718,Tıbbi Dökümantasyon ve Sekreterlik,C,True
+719,Tıbbi Dökümantasyon ve Sekreterlik,C,False
+720,Uluslar Arası İlişkiler,C,True
+721,Uluslar Arası İlişkiler,E,True
+722,Uluslar Arası İlişkiler,B,True
+723,Uluslar Arası İlişkiler,C,True
+724,Uluslar Arası İlişkiler,A,False
+725,Uluslar Arası İlişkiler,D,False
+726,Uluslar Arası İlişkiler,C,True
+727,Uluslar Arası İlişkiler,D,True
+728,Uluslar Arası İlişkiler,B,False
+729,Uluslar Arası İlişkiler,C,False
+730,Uluslar Arası İlişkiler,A,False
+731,Uluslar Arası İlişkiler,E,True
+732,Uluslar Arası İlişkiler,"Dil, eğitim, estetik ve din kültürün temel unsurlarıdır. Paylaşım",False
+733,Uluslar Arası İlişkiler,B,True
+734,Uluslar Arası İlişkiler,C,True
+735,Uluslararası Ticaret ve Lojistik Yönetimi,C,False
+736,Uluslararası Ticaret ve Lojistik Yönetimi,D,True
+737,Uluslararası Ticaret ve Lojistik Yönetimi,C,True
+738,Uluslararası Ticaret ve Lojistik Yönetimi,C,True
+739,Uluslararası Ticaret ve Lojistik Yönetimi,C,True
+740,Uluslararası Ticaret ve Lojistik Yönetimi,C,False
+741,Uluslararası Ticaret ve Lojistik Yönetimi,B,True
+742,Uluslararası Ticaret ve Lojistik Yönetimi,B,True
+743,Uluslararası Ticaret ve Lojistik Yönetimi,C,False
+744,Uluslararası Ticaret ve Lojistik Yönetimi,A,True
+745,Uluslararası Ticaret ve Lojistik Yönetimi,C,False
+746,Uluslararası Ticaret ve Lojistik Yönetimi,C,True
+747,Uluslararası Ticaret ve Lojistik Yönetimi,C,False
+748,Uluslararası Ticaret ve Lojistik Yönetimi,C,True
+749,Uluslararası Ticaret ve Lojistik Yönetimi,C,False
+750,Yaşlı Bakımı,C,True
+751,Yaşlı Bakımı,E,True
+752,Yaşlı Bakımı,A,True
+753,Yaşlı Bakımı,B,True
+754,Yaşlı Bakımı,C,False
+755,Yaşlı Bakımı,D,True
+756,Yaşlı Bakımı,C,False
+757,Yaşlı Bakımı,A,False
+758,Yaşlı Bakımı,A,True
+759,Yaşlı Bakımı,B,True
+760,Yaşlı Bakımı,C,False
+761,Yaşlı Bakımı,C,False
+762,Yaşlı Bakımı,C,False
+763,Yaşlı Bakımı,B,True
+764,Yaşlı Bakımı,B,True
+765,Yerel Yönetimler,C,True
+766,Yerel Yönetimler,B,True
+767,Yerel Yönetimler,D,True
+768,Yerel Yönetimler,B,True
+769,Yerel Yönetimler,B,True
+770,Yerel Yönetimler,D,False
+771,Yerel Yönetimler,C,True
+772,Yerel Yönetimler,D,True
+773,Yerel Yönetimler,C,True
+774,Yerel Yönetimler,B,True
+775,Yerel Yönetimler,B,False
+776,Yerel Yönetimler,C,True
+777,Yerel Yönetimler,E,True
+778,Yerel Yönetimler,B,False
+779,Yerel Yönetimler,C,True
+780,Yönetim Bİlişim Sistemleri,E,True
+781,Yönetim Bİlişim Sistemleri,B,True
+782,Yönetim Bİlişim Sistemleri,C,True
+783,Yönetim Bİlişim Sistemleri,D,False
+784,Yönetim Bİlişim Sistemleri,B,True
+785,Yönetim Bİlişim Sistemleri,D,False
+786,Yönetim Bİlişim Sistemleri,A,False
+787,Yönetim Bİlişim Sistemleri,B,True
+788,Yönetim Bİlişim Sistemleri,E,True
+789,Yönetim Bİlişim Sistemleri,B,True
+790,Yönetim Bİlişim Sistemleri,C,True
+791,Yönetim Bİlişim Sistemleri,D,True
+792,Yönetim Bİlişim Sistemleri,D,True
+793,Yönetim Bİlişim Sistemleri,E,False
+794,Yönetim Bİlişim Sistemleri,C,True
+795,Çalışma Ekonomisi ve Endüstri İlişkileri,A,True
+796,Çalışma Ekonomisi ve Endüstri İlişkileri,C,False
+797,Çalışma Ekonomisi ve Endüstri İlişkileri,C,False
+798,Çalışma Ekonomisi ve Endüstri İlişkileri,D,True
+799,Çalışma Ekonomisi ve Endüstri İlişkileri,C,False
+800,Çalışma Ekonomisi ve Endüstri İlişkileri,A,True
+801,Çalışma Ekonomisi ve Endüstri İlişkileri,B,True
+802,Çalışma Ekonomisi ve Endüstri İlişkileri,C,False
+803,Çalışma Ekonomisi ve Endüstri İlişkileri,B,True
+804,Çalışma Ekonomisi ve Endüstri İlişkileri,C,False
+805,Çalışma Ekonomisi ve Endüstri İlişkileri,C,False
+806,Çalışma Ekonomisi ve Endüstri İlişkileri,B,True
+807,Çalışma Ekonomisi ve Endüstri İlişkileri,A,True
+808,Çalışma Ekonomisi ve Endüstri İlişkileri,B,False
+809,Çalışma Ekonomisi ve Endüstri İlişkileri,C,True
+810,Çağrı Merkezi Hizmetleri,C,True
+811,Çağrı Merkezi Hizmetleri,C,True
+812,Çağrı Merkezi Hizmetleri,D,True
+813,Çağrı Merkezi Hizmetleri,C,True
+814,Çağrı Merkezi Hizmetleri,C,False
+815,Çağrı Merkezi Hizmetleri,B,False
+816,Çağrı Merkezi Hizmetleri,C,False
+817,Çağrı Merkezi Hizmetleri,B,True
+818,Çağrı Merkezi Hizmetleri,A,False
+819,Çağrı Merkezi Hizmetleri,D,False
+820,Çağrı Merkezi Hizmetleri,A,True
+821,Çağrı Merkezi Hizmetleri,E,True
+822,Çağrı Merkezi Hizmetleri,D,True
+823,Çağrı Merkezi Hizmetleri,B,True
+824,Çağrı Merkezi Hizmetleri,C,False
+825,Çocuk Gelişimi,C,True
+826,Çocuk Gelişimi,D,False
+827,Çocuk Gelişimi,B,True
+828,Çocuk Gelişimi,D,True
+829,Çocuk Gelişimi,C,False
+830,Çocuk Gelişimi,C,True
+831,Çocuk Gelişimi,D,True
+832,Çocuk Gelişimi,C,True
+833,Çocuk Gelişimi,C,True
+834,Çocuk Gelişimi,D,True
+835,Çocuk Gelişimi,C,True
+836,Çocuk Gelişimi,C,True
+837,Çocuk Gelişimi,E: Paul Krugman,True
+838,Çocuk Gelişimi,B,False
+839,Çocuk Gelişimi,B,True
+840,Özel Koruma ve Güvenlik,C,True
+841,Özel Koruma ve Güvenlik,C,True
+842,Özel Koruma ve Güvenlik,B,False
+843,Özel Koruma ve Güvenlik,C,False
+844,Özel Koruma ve Güvenlik,B,True
+845,Özel Koruma ve Güvenlik,C,False
+846,Özel Koruma ve Güvenlik,C,False
+847,Özel Koruma ve Güvenlik,C,False
+848,Özel Koruma ve Güvenlik,A,True
+849,Özel Koruma ve Güvenlik,C,True
+850,Özel Koruma ve Güvenlik,C,False
+851,Özel Koruma ve Güvenlik,A,True
+852,Özel Koruma ve Güvenlik,C,True
+853,Özel Koruma ve Güvenlik,E,False
+854,Özel Koruma ve Güvenlik,A,True
+855,Üniversite Giriş Sınavı Temel Bilimler,A,True
+856,Üniversite Giriş Sınavı Temel Bilimler,B,True
+857,Üniversite Giriş Sınavı Temel Bilimler,C,True
+858,Üniversite Giriş Sınavı Temel Bilimler,C,True
+859,Üniversite Giriş Sınavı Temel Bilimler,C,True
+860,Üniversite Giriş Sınavı Temel Bilimler,B,True
+861,Üniversite Giriş Sınavı Temel Bilimler,D,False
+862,Üniversite Giriş Sınavı Temel Bilimler,B,True
+863,Üniversite Giriş Sınavı Temel Bilimler,B,True
+864,Üniversite Giriş Sınavı Temel Bilimler,E,True
+865,Üniversite Giriş Sınavı Temel Bilimler,A,False
+866,Üniversite Giriş Sınavı Temel Bilimler,C,True
+867,Üniversite Giriş Sınavı Temel Bilimler,C,False
+868,Üniversite Giriş Sınavı Temel Bilimler,A,False
+869,Üniversite Giriş Sınavı Temel Bilimler,B,False
+870,İktisat,C,True
+871,İktisat,E,True
+872,İktisat,C,False
+873,İktisat,C,False
+874,İktisat,A,True
+875,İktisat,C,True
+876,İktisat,B,True
+877,İktisat,C,False
+878,İktisat,A,True
+879,İktisat,D,True
+880,İktisat,D,True
+881,İktisat,C,False
+882,İktisat,C,False
+883,İktisat,D,True
+884,İktisat,B,True
+885,İlahiyat,B,True
+886,İlahiyat,A,True
+887,İlahiyat,D: Mc Luhan,True
+888,İlahiyat,A,True
+889,İlahiyat,C,False
+890,İlahiyat,C,False
+891,İlahiyat,B,True
+892,İlahiyat,B,True
+893,İlahiyat,B,True
+894,İlahiyat,B,True
+895,İlahiyat,D,True
+896,İlahiyat,B,False
+897,İlahiyat,A,True
+898,İlahiyat,B,True
+899,İlahiyat,D,True
+900,İnsan Kaynakları Yönetimi,C,True
+901,İnsan Kaynakları Yönetimi,E,True
+902,İnsan Kaynakları Yönetimi,C,False
+903,İnsan Kaynakları Yönetimi,B,True
+904,İnsan Kaynakları Yönetimi,C,False
+905,İnsan Kaynakları Yönetimi,D,True
+906,İnsan Kaynakları Yönetimi,B,True
+907,İnsan Kaynakları Yönetimi,C,True
+908,İnsan Kaynakları Yönetimi,D,True
+909,İnsan Kaynakları Yönetimi,A,True
+910,İnsan Kaynakları Yönetimi,D,True
+911,İnsan Kaynakları Yönetimi,C,True
+912,İnsan Kaynakları Yönetimi,B,True
+913,İnsan Kaynakları Yönetimi,E,True
+914,İnsan Kaynakları Yönetimi,D,False
+915,İşletme Yönetimi,C,False
+916,İşletme Yönetimi,A,True
+917,İşletme Yönetimi,B,False
+918,İşletme Yönetimi,C,True
+919,İşletme Yönetimi,C,False
+920,İşletme Yönetimi,E,True
+921,İşletme Yönetimi,C,True
+922,İşletme Yönetimi,A,True
+923,İşletme Yönetimi,B,False
+924,İşletme Yönetimi,E,True
+925,İşletme Yönetimi,D,True
+926,İşletme Yönetimi,B,True
+927,İşletme Yönetimi,E,False
+928,İşletme Yönetimi,C,False
+929,İşletme Yönetimi,C,True

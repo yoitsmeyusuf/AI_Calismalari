@@ -1,0 +1,23 @@
+{
+  "etiket": "gemma2_2b_it",
+  "model_name": "unsloth/gemma-2-2b-it-bnb-4bit",
+  "toplam_soru": 100,
+  "dogru_sayisi": 87,
+  "genel_basari": 87.0,
+  "sure_saniye": 38.3,
+  "kategori_basari": {
+    "19. Yüzyıl Felsefesi": 71.43,
+    "20. Yüzyıl Felsefesi": 100.0,
+    "Antik Yunan Felsefesi": 81.82,
+    "Epistemoloji": 88.89,
+    "Estetik": 87.5,
+    "Etik": 100.0,
+    "Mantık": 50.0,
+    "Metafizik ve Ontoloji": 100.0,
+    "Modern Felsefe": 88.89,
+    "Ortaçağ ve İslam Felsefesi": 88.89,
+    "Siyaset Felsefesi": 100.0,
+    "Zihin Felsefesi ve Çağdaş Felsefe": 90.0,
+    "Çağdaş Felsefe": 100.0
+  }
+}

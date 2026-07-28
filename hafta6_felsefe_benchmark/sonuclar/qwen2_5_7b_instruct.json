@@ -1,0 +1,23 @@
+{
+  "etiket": "qwen2_5_7b_instruct",
+  "model_name": "unsloth/Qwen2.5-7B-Instruct-bnb-4bit",
+  "toplam_soru": 100,
+  "dogru_sayisi": 99,
+  "genel_basari": 99.0,
+  "sure_saniye": 47.2,
+  "kategori_basari": {
+    "19. Yüzyıl Felsefesi": 100.0,
+    "20. Yüzyıl Felsefesi": 100.0,
+    "Antik Yunan Felsefesi": 100.0,
+    "Epistemoloji": 100.0,
+    "Estetik": 100.0,
+    "Etik": 100.0,
+    "Mantık": 100.0,
+    "Metafizik ve Ontoloji": 100.0,
+    "Modern Felsefe": 100.0,
+    "Ortaçağ ve İslam Felsefesi": 100.0,
+    "Siyaset Felsefesi": 100.0,
+    "Zihin Felsefesi ve Çağdaş Felsefe": 100.0,
+    "Çağdaş Felsefe": 0.0
+  }
+}
