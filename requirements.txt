@@ -19,3 +19,9 @@ requests==2.34.2
 
 # playwright kurulumdan sonra tarayıcı binary'sini de indirmeniz gerekir:
 #   .venv/bin/python -m playwright install chromium
+
+# 7. ve 8. hafta (tool calling + Gradio) kendi requirements dosyalarını kullanıyor;
+# bu dosyaya eklenmedi çünkü Space'te torch/unsloth gerekmiyor. Yerelde denemek için:
+#   uv pip install --python .venv/bin/python -r hafta7_tool_calling/requirements.txt
+#   uv pip install --python .venv/bin/python -r hafta8_veritabani_ajani/requirements.txt
+# 8. haftanın veritabanı için ek paket yok: sqlite3 standart kütüphanede.

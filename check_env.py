@@ -67,6 +67,62 @@ def check_hf_auth():
         print(f"         (detay: {e})")
 
 
+def check_hafta7():
+    """7. hafta (tool calling + Spaces) bagimsiz calisir, ayri kontrol edilir."""
+    print("--- 7. hafta: tool calling / Gradio ---")
+    for name in ("gradio", "transformers", "requests"):
+        try:
+            mod = importlib.import_module(name)
+            print(f"  OK  {name} ({getattr(mod, '__version__', '?')})")
+        except ImportError:
+            print(f"  EKSIK  {name} — kurmak için:")
+            print("         uv pip install --python .venv/bin/python -r hafta7_tool_calling/requirements.txt")
+
+    arka_uc = (os.environ.get("TOOL_BACKEND") or "yerel").strip().lower()
+    print(f"  TOOL_BACKEND: {arka_uc}", end="")
+    if arka_uc in ("yerel", "local", "transformers", "zerogpu"):
+        try:
+            import torch
+
+            print(
+                f" (model yerelde çalışacak; CUDA: "
+                f"{'var' if torch.cuda.is_available() else 'YOK — küçük model ya da TOOL_BACKEND=api kullanın'})"
+            )
+        except ImportError:
+            print(" — UYARI: torch kurulu değil, yerel arka uç çalışmaz")
+    else:
+        print(" (model Inference Providers üzerinden çağrılacak)")
+
+    if not os.environ.get("HF_TOKEN"):
+        print(
+            "  NOT  HF_TOKEN ortamda yok; yerelde `hf auth login` cache'i kullanılır. "
+            "Space'e deploy ederken token'ı elle secret olarak girmeniz gerekir."
+        )
+
+
+def check_hafta8():
+    """8. hafta (SQLite'a yazan tool calling ajani) - veritabani kontrolu."""
+    print("--- 8. hafta: veritabanı ajanı ---")
+    import sqlite3
+    import sys
+    from pathlib import Path
+
+    hafta8 = Path(__file__).resolve().parent / "hafta8_veritabani_ajani"
+    sys.path.insert(0, str(hafta8))
+    try:
+        import veritabani as db
+
+        yol = db.db_kur()
+        with db.baglanti(yol) as conn:
+            (kitap,) = conn.execute("SELECT COUNT(*) FROM kitaplar").fetchone()
+            (siparis,) = conn.execute("SELECT COUNT(*) FROM siparisler").fetchone()
+        print(f"  OK  {yol} ({kitap} kitap, {siparis} sipariş)")
+    except (ImportError, sqlite3.Error) as e:
+        print(f"  HATA  veritabanı kurulamadı: {type(e).__name__}: {e}")
+    finally:
+        sys.path.remove(str(hafta8))
+
+
 def check_env_file():
     print("--- .env dosyası ---")
     required_keys = [
@@ -76,6 +132,11 @@ def check_env_file():
         "IDENTITY_DATASET_REPO_ID",
         "IDENTITY_LORA_REPO_ID",
         "BASE_MODEL",
+        "FELSEFE_BENCHMARK_REPO_ID",
+        "SPACE_REPO_ID",
+        "TOOL_BACKEND",
+        "TOOL_MODEL",
+        "SPACE_REPO_ID_KITAPCI",
     ]
     for key in required_keys:
         value = os.environ.get(key, "")
@@ -104,6 +165,8 @@ if __name__ == "__main__":
     check_gpu()
     check_hf_auth()
     check_playwright_browser()
+    check_hafta7()
+    check_hafta8()
     check_env_file()
     if missing:
         raise SystemExit(f"\nEksik kütüphaneler var: {missing}")

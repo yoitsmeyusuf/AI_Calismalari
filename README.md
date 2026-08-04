@@ -2,8 +2,9 @@
 
 Türkçe felsefe alanında sıfırdan bir veri seti toplayıp, kendi tokenizer'ımı
 eğitip, 4B'lik bir taban modeli bu veriyle ince ayarlayıp (LoRA), sonucu iki
-ayrı benchmark ile ölçtüğüm 6 haftalık bir çalışma serisi. Her hafta bir önceki
-haftanın çıktısı üzerine kuruluyor.
+ayrı benchmark ile ölçtüğüm ve son olarak bir modeli önce dış API'lerle, sonra
+gerçek bir veritabanıyla konuşturup (tool calling) canlıya aldığım 8 haftalık bir
+çalışma serisi. Her hafta bir önceki haftanın çıktısı üzerine kuruluyor.
 
 **Alan:** Felsefe (düşünürler, akımlar, temel kavramlar) — Türkçe, tek dilli
 **Taban model:** `unsloth/Qwen3.5-4B` (4bit + LoRA)
@@ -19,9 +20,14 @@ haftanın çıktısı üzerine kuruluyor.
 | 4 | [`hafta4_kimlik/`](hafta4_kimlik/) | Kimlik (identity) fine-tune — bağımsız deneme | Identity dataset + LoRA |
 | 5 | [`hafta5_mmlu_benchmark/`](hafta5_mmlu_benchmark/) | Türkçe MMLU ile taban model vs. fine-tune karşılaştırması | Bölüm bazlı sonuç tabloları |
 | 6 | [`hafta6_felsefe_benchmark/`](hafta6_felsefe_benchmark/) | Sıfırdan yazılmış 100 soruluk felsefe benchmark'ı, 5 model | Benchmark veri seti + karşılaştırma |
+| 7 | [`hafta7_tool_calling/`](hafta7_tool_calling/) | Tool calling (function calling) + Open-Meteo API + Gradio, HF Spaces'te (ZeroGPU) canlı | [4 araçlı şeffaf hava durumu ajanı](https://huggingface.co/spaces/yoitsmeyusuf/tool-calling-hava-durumu) |
+| 8 | [`hafta8_veritabani_ajani/`](hafta8_veritabani_ajani/) | Veritabanına **okuyup yazan** tool calling ajanı (SQLite) + halüsinasyon guardrail'i | 4 araçlı felsefe kitapçısı sipariş asistanı |
 
 `common/` iki haftanın paylaştığı kodu tutuyor: `hf_dataset_schema.py` (1 ve 4)
-ve `lora_trainer.py` (3 ve 4).
+ve `lora_trainer.py` (3 ve 4). 7. ve 8. hafta serinin diğer haftalarından
+bağımsız çalışır (eğitim gerektirmez; modeli ya Space'in ZeroGPU'sunda ya da
+uzaktan Inference Providers üzerinden çalıştırır). 8. hafta model katmanını
+(`modeller.py`) 7. haftadan olduğu gibi kullanıyor.
 
 Her klasörün kendi `README.md`'si var — neyi neden o şekilde yaptığımı,
 karşılaştığım sorunları ve sonuçları orada anlattım.
@@ -52,6 +58,31 @@ iyileştirmiyor. Beklenen bir sonuç; asıl kazanç domain içi ton ve terminolo
 Sorular net ve tek doğru cevaplı ders kitabı tarzı olduğu için güçlü modellerde
 bir tavan etkisi (ceiling effect) oluştu; benchmark asıl küçük modelleri ayırt
 etmekte işe yarıyor. Bunu 6. haftanın README'sinde ayrıca tartıştım.
+
+**Tool calling (7. hafta, ödevin örnek sorusu — iki turlu zincir gerekiyor):**
+
+| Yaklaşım | Sonuç |
+|---|---|
+| `Qwen2.5-7B-Instruct` + sistem promptu kuralı | ❌ çevirim aracını atlayıp kendi hesapladı |
+| + araç çıktısına not, + promptta örnek, + `Qwen2.5-14B-Instruct` | ❌ üçü de değiştirmedi |
+| + döngüde guardrail: ihlali yakala, araç çağrısını zorunlu tut | ✅ zincir kuruluyor |
+| `Qwen3-Coder-30B-A3B-Instruct` (Inference Providers) | ✅ kendiliğinden doğru zincir |
+
+Küçük modellerde "aracı kullan" talimatı tek başına yetmiyor; kuralı prompt'tan
+harness'a taşımak gerekti. Detay 7. haftanın README'sinde.
+
+**Halüsinasyon engelleme (8. hafta — modelin veritabanına yazdığı senaryo):**
+
+| Model | Ne yaptı | Guardrail |
+|---|---|---|
+| `Qwen2.5-7B-Instruct` | Stoğu tükenmiş kitap yerine **katalogda hiç olmayan bir kitap** önerdi | ✅ yakalandı (tırnak içindeki kitap adı kontrolü) |
+| `Qwen2.5-7B-Instruct` | `create_order`'ı atlayıp **sipariş kodunu kendisi uydurdu** | ✅ yakalandı (kod kontrolü) |
+| `Qwen2.5-0.5B-Instruct` | Hiç sipariş vermeden "2 adet sipariş verildi" dedi | ✅ yakalandı; düzeltmede ısrar etti, cevap "Doğrulanmadı" diye işaretlendi |
+| `Qwen3-Coder-30B-A3B-Instruct` | Zinciri kendiliğinden doğru kurdu (ara → sipariş ver) | — ihlal yok |
+
+Prompt ve araç çıktısındaki uyarılar tek başına yetmiyor; yanıt yayınlanmadan
+önce fiyatların, sipariş kodlarının ve kitap adlarının araç çıktısından geldiğini
+harness doğruluyor. Detay 8. haftanın README'sinde.
 
 ## Kurulum
 
@@ -87,8 +118,30 @@ Bütün script'ler ilgili klasörden değil, **proje kökünden** çalıştırı
 .venv/bin/python hafta1_veri_seti/build_dataset.py
 ```
 
-Sıra önemli — her hafta bir öncekinin çıktısını (HF'ye push edilmiş dataset /
-adaptör) kullanıyor.
+Sıra önemli — 1-6. haftalar bir öncekinin çıktısını (HF'ye push edilmiş dataset /
+adaptör) kullanıyor. 7. hafta bağımsızdır:
+
+```bash
+uv pip install --python .venv/bin/python -r hafta7_tool_calling/requirements.txt
+.venv/bin/python hafta7_tool_calling/app.py                        # yerel Gradio arayüzü
+.venv/bin/python hafta7_tool_calling/deploy_space.py               # ZeroGPU Space'e yayınla
+```
+
+8. hafta da bağımsız; ek olarak SQLite veritabanını ilk çalıştırmada kendisi
+kuruyor (elle bir adım gerekmiyor):
+
+```bash
+uv pip install --python .venv/bin/python -r hafta8_veritabani_ajani/requirements.txt
+.venv/bin/python hafta8_veritabani_ajani/veritabani.py --sifirla    # DB'yi kur + içeriğini dök
+.venv/bin/python hafta8_veritabani_ajani/araclar.py                 # 4 aracı + hata yollarını dene
+.venv/bin/python hafta8_veritabani_ajani/ajan.py --guardrail        # halüsinasyon guardrail testi
+.venv/bin/python hafta8_veritabani_ajani/app.py                     # yerel Gradio arayüzü
+.venv/bin/python hafta8_veritabani_ajani/deploy_space.py            # ZeroGPU Space'e yayınla
+```
+
+Yerelde 7B'yi çalıştırmak GPU istiyor; GPU'suz makinede küçük bir modelle
+(`TOOL_MODEL=Qwen/Qwen2.5-0.5B-Instruct`) ya da `TOOL_BACKEND=api` ile
+denenebilir. Detay 7. ve 8. haftanın README'lerinde.
 
 ## Notlar
 
@@ -103,6 +156,17 @@ adaptör) kullanıyor.
   olduğundan `common/lora_trainer.py` `FastLanguageModel` yerine
   `unsloth.FastModel` kullanıyor — biz sadece metinle eğitiyoruz. Bu ayrıntı
   inference tarafında da mesaj formatını değiştiriyor (3. haftanın README'si).
+- **Veritabanı kalıcılığı (8. hafta):** Space'te kalıcı disk yoksa SQLite dosyası
+  geçicidir — Space yeniden başlatıldığında siparişler sıfırlanır, katalog tohum
+  veriden yeniden kurulur. `veritabani.py` kalıcı disk (`/data`) varsa oraya
+  yazıyor; yol `KITAPCI_DB` ile de verilebilir.
+- **Space barındırma (7. hafta):** Hugging Face ücretsiz `cpu-basic` donanımda
+  Gradio Space barındırmayı kaldırdı (yalnızca static Space'ler ücretsiz), ama
+  **ZeroGPU** (`zero-a10g`) PRO olmayan hesapta da açılıyor — üstüne ücretsiz GPU
+  veriyor. Bu yüzden 7. haftanın Space'i ZeroGPU'da koşuyor ve model
+  (`Qwen2.5-7B-Instruct`) `transformers` ile Space'in **içinde** çalışıyor;
+  Inference Providers kredisine ihtiyaç duymuyor. Ajan katmanı arka uçtan bağımsız:
+  `TOOL_BACKEND=api` ile aynı kod Inference Providers üzerinden de çalışıyor.
 - **Veri kalitesi:** Ham scraping çıktısı doğrudan kullanılmadı; konu uygunluğu,
   uzunluk ve güvenlik (küfür/PII/nefret söylemi) taramalarından geçirildi.
   Elenen satırların id'leri kalıcı olarak tutuluyor, böylece scraper tekrar

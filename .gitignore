@@ -47,6 +47,11 @@ mlruns/
 lightning_logs/
 *.log
 
+# --- Üretilen veritabanı (8. hafta) ---
+# Şema ve tohum katalog veritabani.py içinde; dosya ilk çalıştırmada kurulur.
+*.db
+*.sqlite3
+
 # --- Ham veri (kaynaktan yeniden toplanabilir) ---
 # İşlenmiş veri seti HF Hub'da; ham scraping çıktısı repoda tutulmuyor.
 **/data/raw/
