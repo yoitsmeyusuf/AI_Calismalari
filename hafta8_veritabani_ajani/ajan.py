@@ -302,6 +302,80 @@ class Ihlal(NamedTuple):
         return self.tur == "yazma_iddiasi"
 
 
+def _bakilan_kitap_idleri(durum: AjanDurumu) -> set[int]:
+    """Bu soruda `search_books` ile gercekten donmus kitap_id'ler."""
+    idler: set[int] = set()
+    for iz in durum.arac_izleri():
+        if iz.ad != "search_books" or not iz.sonuc:
+            continue
+        for kitap in iz.sonuc.get("kitaplar") or []:
+            if isinstance(kitap.get("kitap_id"), int):
+                idler.add(kitap["kitap_id"])
+    return idler
+
+
+def _arac_kitap_adlari(durum: AjanDurumu) -> set[str]:
+    """Arac ciktilarinda gecen butun kitap adlari (normalize)."""
+    adlar: set[str] = set()
+    for iz in durum.arac_izleri():
+        if not iz.sonuc:
+            continue
+        for kitap in iz.sonuc.get("kitaplar") or []:
+            if kitap.get("baslik"):
+                adlar.add(_normalize(kitap["baslik"]))
+        if iz.sonuc.get("kitap"):
+            adlar.add(_normalize(iz.sonuc["kitap"]))
+    return adlar
+
+
+def yazma_engeli(iz: AracIzi, durum: AjanDurumu) -> dict | None:
+    """Yazma cagrisi calistirilmadan once son bir dogrulama.
+
+    Guardrail'in tespit edici kismi yazmayi geri alamiyor; bu yuzden yazan
+    araclara **onleyici** bir kural koyuyoruz: model yalnizca bu soruda
+    gercekten baktigi bir kaydi degistirebilir.
+
+      create_order -> book_id daha once search_books'tan donmus olmali
+      cancel_order -> siparis kodu kullanicinin sorusunda ya da bir arac
+                      ciktisinda gecmis olmali
+
+    Canli Space'te `Qwen2.5-7B` Camus'yu aratip (kitap_id 6) sonra
+    `create_order(book_id=8)` cagirdi ve kullaniciya "Sisifos Söyleni siparişi
+    alındı" dedi - oysa veritabanina Nikomakhos'a Etik yazilmisti. Sema
+    aciklamasi ("book_id'yi UYDURMA") bunu engellemedi.
+
+    None = izin var. Aksi halde modele geri verilecek hata sozlugu.
+    """
+    if iz.ad == "create_order":
+        bakilan = _bakilan_kitap_idleri(durum)
+        try:
+            istenen = int(str(iz.argumanlar.get("book_id")).strip())
+        except (TypeError, ValueError):
+            return None  # arac katmani zaten anlamli bir hata dondurecek
+        if istenen not in bakilan:
+            return {
+                "hata": (
+                    f"{istenen} numaralı kitap bu konuşmada search_books ile "
+                    f"getirilmedi, sipariş oluşturulmadı. Sipariş verebileceğin "
+                    f"kitap_id'ler: {sorted(bakilan) or 'yok — önce search_books çağır'}."
+                )
+            }
+
+    if iz.ad == "cancel_order":
+        kod = _normalize(str(iz.argumanlar.get("order_code") or ""))
+        _, _, arac_metni = _arac_gercekleri(durum)
+        if kod and kod not in arac_metni and kod not in _normalize(durum.soru):
+            return {
+                "hata": (
+                    f"'{iz.argumanlar.get('order_code')}' kodu ne kullanıcının "
+                    "mesajında ne de bir araç çıktısında geçiyor; iptal yapılmadı. "
+                    "Kodu kullanıcıya doğrulat ya da get_order_status ile kontrol et."
+                )
+            }
+
+    return None
+
+
 def _kitap_adina_benziyor(ad: str) -> bool:
     """Tirnak icindeki (normalize edilmis) ifade bir kitap adi olabilir mi?
 
