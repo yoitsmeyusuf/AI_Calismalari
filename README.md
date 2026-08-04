@@ -21,7 +21,7 @@ gerçek bir veritabanıyla konuşturup (tool calling) canlıya aldığım 8 haft
 | 5 | [`hafta5_mmlu_benchmark/`](hafta5_mmlu_benchmark/) | Türkçe MMLU ile taban model vs. fine-tune karşılaştırması | Bölüm bazlı sonuç tabloları |
 | 6 | [`hafta6_felsefe_benchmark/`](hafta6_felsefe_benchmark/) | Sıfırdan yazılmış 100 soruluk felsefe benchmark'ı, 5 model | Benchmark veri seti + karşılaştırma |
 | 7 | [`hafta7_tool_calling/`](hafta7_tool_calling/) | Tool calling (function calling) + Open-Meteo API + Gradio, HF Spaces'te (ZeroGPU) canlı | [4 araçlı şeffaf hava durumu ajanı](https://huggingface.co/spaces/yoitsmeyusuf/tool-calling-hava-durumu) |
-| 8 | [`hafta8_veritabani_ajani/`](hafta8_veritabani_ajani/) | Veritabanına **okuyup yazan** tool calling ajanı (SQLite) + halüsinasyon guardrail'i | 4 araçlı felsefe kitapçısı sipariş asistanı |
+| 8 | [`hafta8_veritabani_ajani/`](hafta8_veritabani_ajani/) | Veritabanına **okuyup yazan** tool calling ajanı (SQLite) + halüsinasyon guardrail'i | [4 araçlı felsefe kitapçısı sipariş asistanı](https://huggingface.co/spaces/yoitsmeyusuf/kitapci-siparis-ajani) |
 
 `common/` iki haftanın paylaştığı kodu tutuyor: `hf_dataset_schema.py` (1 ve 4)
 ve `lora_trainer.py` (3 ve 4). 7. ve 8. hafta serinin diğer haftalarından

@@ -235,8 +235,9 @@ ARAC_SEMALARI = [
                     "customer_name": {
                         "type": "string",
                         "description": (
-                            "Müşterinin adı. Kullanıcı adını söylediyse onu kullan, "
-                            "söylemediyse bu alanı boş bırak."
+                            "Müşterinin adı. Kullanıcı adını söylediyse yalnızca adı "
+                            "yaz ('adım Yusuf' -> 'Yusuf'), söylemediyse bu alanı boş "
+                            "bırak."
                         ),
                     },
                 },

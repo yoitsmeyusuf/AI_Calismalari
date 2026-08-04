@@ -37,7 +37,7 @@ import re
 import sys
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Iterator
+from typing import Iterator, NamedTuple
 
 HERE = Path(__file__).resolve().parent
 # modeller.py 7. haftadan geliyor (kopyalamak yerine ayni modulu kullaniyoruz).
@@ -51,6 +51,15 @@ from araclar import ARAC_SEMALARI, YAZAN_ARACLAR, araci_calistir  # noqa: E402
 from modeller import model_yukle  # noqa: E402
 
 MAKS_TUR = 5  # search_books -> create_order -> nihai yanit + guardrail payi
+
+# Guardrail'in duzeltme turunda modele acilan araclar. Yanlis alarm ihtimaline
+# karsi varsayilan olarak yalnizca OKUYAN araclar aciliyor: uydurma bir fiyati
+# duzeltmek icin sorgu yeter, ve zorlanan tur istemedigimiz bir siparis
+# yazmamali. (Canli Space'te tam bunu gorduk: bir yanlis alarm, modele
+# create_order cagirtip kullanicinin istemedigi bir siparis olusturdu.)
+OKUYAN_ARAC_SEMALARI = [
+    s for s in ARAC_SEMALARI if s["function"]["name"] not in YAZAN_ARACLAR
+]
 
 SISTEM_PROMPTU = """Sen bir felsefe kitapçısının sipariş asistanısın. Kitapçının kataloğuna, \
 stok bilgisine ve sipariş kayıtlarına YALNIZCA sana verilen araçlar üzerinden erişebilirsin.
@@ -275,10 +284,44 @@ def _fiyat_dogrulanmis(deger: float, arac_sayilari: set[float]) -> bool:
     return False
 
 
-def _dogrulanmamis_veri(soru: str, yanit: str, durum: AjanDurumu) -> str:
+class Ihlal(NamedTuple):
+    """Guardrail'in yakaladigi tek bir sorun."""
+
+    tur: str  # "arac_yok" | "yazma_iddiasi" | "kod" | "kitap" | "fiyat"
+    mesaj: str
+
+    @property
+    def yazma_gerektirir(self) -> bool:
+        """Duzeltme turunda yazan araclar da acilmali mi?
+
+        Yalnizca "sipariş verildi ama yazan araç çalışmadı" ihlalinde: orada
+        kullanicinin niyeti zaten siparis vermek, dogru duzeltme create_order'i
+        cagirmak. Diger ihlallerde uydurma veriyi *sorgulamak* yeterli, yazma
+        araclarini acmak yanlis alarmda istenmeyen siparise yol acar.
+        """
+        return self.tur == "yazma_iddiasi"
+
+
+def _kitap_adina_benziyor(ad: str) -> bool:
+    """Tirnak icindeki (normalize edilmis) ifade bir kitap adi olabilir mi?
+
+    Modeller tirnagi kitap adi disinda da kullaniyor: durum adlari, kendi
+    notlari, hatta sistem promptundan kopyaladiklari talimatlar. Canli Space'te
+    model cevabina "Sipariş vermek istiyorum: kitap_id = 6, adet = 1" diye bir
+    tirnakli satir koydu ve guardrail bunu uydurma kitap sandi. Kitap adlari
+    kisa isim obekleri; noktalama ve uzunluk bunlari ayirmaya yetiyor.
+    """
+    if not ad or ad in TIRNAK_MUAFLARI:
+        return False
+    if any(im in ad for im in ("=", ":", ";", "_")):
+        return False  # talimat/kod parcasi, baslik degil
+    return len(ad.split()) <= 6  # katalogdaki en uzun baslik 5 kelime
+
+
+def _dogrulanmamis_veri(soru: str, yanit: str, durum: AjanDurumu) -> Ihlal | None:
     """Nihai yanitta veritabanindan gelmeyen bilgi var mi?
 
-    Bos string = sorun yok. Dolu string, ihlalin kisa aciklamasi (hem duzeltme
+    None = sorun yok. Aksi halde ihlalin turu ve kisa aciklamasi (hem duzeltme
     mesajinda hem iz panelinde kullaniliyor).
     """
     yanit = yanit or ""
@@ -286,14 +329,17 @@ def _dogrulanmamis_veri(soru: str, yanit: str, durum: AjanDurumu) -> str:
 
     # 1) Katalog/siparis sorusuna hic araca gitmeden cevap verilmis.
     if katalog_sorusu and not durum.arac_cagri_sayisi and len(yanit.split()) > 3:
-        return "hiç araç çağrılmadan katalog/sipariş bilgisi verildi"
+        return Ihlal("arac_yok", "hiç araç çağrılmadan katalog/sipariş bilgisi verildi")
 
     # 2) "Siparişiniz alındı" deniyor ama veritabanina yazan bir cagri basarili
     #    olmamis. (Qwen2.5-0.5B, create_order'i hic cagirmadan "2 adet sipariş
     #    verildi" yazarken bu kurala takildi - en tehlikeli halusinasyon turu,
     #    cunku kullanici olmayan bir siparisi beklemeye baslar.)
     if YAZMA_IDDIASI_DESENI.search(yanit) and not durum.basarili_yazma_sayisi:
-        return "sipariş/iptal yapıldığı söylendi ama veritabanına yazan araç çalışmadı"
+        return Ihlal(
+            "yazma_iddiasi",
+            "sipariş/iptal yapıldığı söylendi ama veritabanına yazan araç çalışmadı",
+        )
 
     arac_sayilari, arac_kodlari, arac_metni = _arac_gercekleri(durum)
 
@@ -302,7 +348,9 @@ def _dogrulanmamis_veri(soru: str, yanit: str, durum: AjanDurumu) -> str:
         k.upper() for k in KOD_DESENI.findall(yanit) if k.upper() not in arac_kodlari
     }
     if uydurma_kodlar:
-        return f"araç çıktısında olmayan sipariş kodu: {', '.join(sorted(uydurma_kodlar))}"
+        return Ihlal(
+            "kod", f"araç çıktısında olmayan sipariş kodu: {', '.join(sorted(uydurma_kodlar))}"
+        )
 
     # 4) Cevapta tirnak icine alinmis bir kitap adi var ama ne arac ciktisinda
     #    ne de kullanicinin sorusunda geciyor -> model kitabi uydurmus.
@@ -312,10 +360,10 @@ def _dogrulanmamis_veri(soru: str, yanit: str, durum: AjanDurumu) -> str:
         soru_metni = _normalize(soru)
         for ham_ad in TIRNAK_DESENI.findall(yanit):
             ad = _normalize(ham_ad)
-            if ad in TIRNAK_MUAFLARI:  # kitap adi degil, alan/durum adi
+            if not _kitap_adina_benziyor(ad):
                 continue
-            if ad and ad not in arac_metni and ad not in soru_metni:
-                return f"araç çıktısında olmayan kitap/ifade: “{ham_ad.strip()}”"
+            if ad not in arac_metni and ad not in soru_metni:
+                return Ihlal("kitap", f"araç çıktısında olmayan kitap/ifade: “{ham_ad.strip()}”")
 
     # 5) Cevaptaki tutar hicbir arac ciktisiyla aciklanamiyor.
     for ham in FIYAT_DESENI.findall(yanit):
@@ -324,9 +372,9 @@ def _dogrulanmamis_veri(soru: str, yanit: str, durum: AjanDurumu) -> str:
         except ValueError:
             continue
         if not _fiyat_dogrulanmis(deger, arac_sayilari):
-            return f"araç çıktısında olmayan fiyat: {ham} TL"
+            return Ihlal("fiyat", f"araç çıktısında olmayan fiyat: {ham} TL")
 
-    return ""
+    return None
 
 
 def _model_hatasi(model: str, e: Exception) -> str:
@@ -395,10 +443,11 @@ def ajan_akisi(
 
     duzeltme_istendi = False
     arac_zorla = False
+    acik_semalar = ARAC_SEMALARI
 
     for _ in range(maks_tur):
         try:
-            yanit = sohbet_modeli.tamamla(mesajlar, ARAC_SEMALARI, arac_zorla=arac_zorla)
+            yanit = sohbet_modeli.tamamla(mesajlar, acik_semalar, arac_zorla=arac_zorla)
         except Exception as e:
             durum.hata = _model_hatasi(sohbet_modeli.ad, e)
             yield durum
@@ -410,12 +459,23 @@ def ajan_akisi(
         if not yanit.arac_cagrilari:
             ihlal = _dogrulanmamis_veri(soru, metin, durum)
             if ihlal and not duzeltme_istendi:
-                # Ricayla yetinmiyoruz: sonraki tur arac cagrisi zorunlu.
+                # Ricayla yetinmiyoruz: sonraki tur arac cagrisi zorunlu. Yanlis
+                # alarmda istenmeyen bir siparis olusmasin diye, ihlal turu
+                # gerektirmiyorsa o turda yalnizca okuyan araclar aciliyor.
                 duzeltme_istendi = True
                 arac_zorla = True
-                durum.duzeltme_notu = f"{ihlal}; araç çağrısı zorunlu tutularak düzeltme istendi"
+                acik_semalar = (
+                    ARAC_SEMALARI if ihlal.yazma_gerektirir else OKUYAN_ARAC_SEMALARI
+                )
+                durum.duzeltme_notu = (
+                    f"{ihlal.mesaj}; "
+                    + ("araç" if ihlal.yazma_gerektirir else "yalnızca okuyan araç")
+                    + " çağrısı zorunlu tutularak düzeltme istendi"
+                )
                 mesajlar.append({"role": "assistant", "content": metin})
-                mesajlar.append({"role": "user", "content": DUZELTME_ISTEGI.format(ihlal=ihlal)})
+                mesajlar.append(
+                    {"role": "user", "content": DUZELTME_ISTEGI.format(ihlal=ihlal.mesaj)}
+                )
                 yield durum
                 continue
 
@@ -423,9 +483,11 @@ def ajan_akisi(
                 # Duzeltme istendi ama model israr etti. Dongude kilitlenmiyoruz;
                 # cevabi veriyoruz ama dogrulanmadigini acikca yaziyoruz.
                 durum.duzeltme_notu = (
-                    f"{ihlal}; düzeltme istendi, model ısrar etti — cevap uyarıyla işaretlendi"
+                    f"{ihlal.mesaj}; düzeltme istendi, model ısrar etti — cevap uyarıyla işaretlendi"
                 )
-                metin = (metin + "\n\n" if metin else "") + DOGRULANMADI_UYARISI.format(ihlal=ihlal)
+                metin = (metin + "\n\n" if metin else "") + DOGRULANMADI_UYARISI.format(
+                    ihlal=ihlal.mesaj
+                )
 
             durum.nihai_dusunce = dusunce
             durum.nihai_yanit = metin or "Model boş bir yanıt döndürdü."
@@ -437,6 +499,7 @@ def ajan_akisi(
         tur = TurIzi(no=len(durum.turlar) + 1, ara_metin=metin, dusunce=dusunce)
         durum.turlar.append(tur)
         arac_zorla = False  # zorlama yalnizca duzeltme turu icin gecerli
+        acik_semalar = ARAC_SEMALARI  # kisitlama da yalnizca o tur icindi
         mesajlar.append(
             {"role": "assistant", "content": metin, "arac_cagrilari": yanit.arac_cagrilari}
         )
@@ -550,6 +613,10 @@ def _guardrail_testi() -> None:
          '"Varlık ve Hiçlik" katalogda var ama stoğu tükenmiş (420 TL).', [arama], False),
         ("tırnakta durum adı", "SIP-1002 ne durumda?",
          'Siparişiniz "kargoda" görünüyor, tutar 220 TL.', [siparis], False),
+        # Canli Space'te gorulen yanlis alarm: model kendi notunu tirnakladi.
+        ("tırnakta talimat metni", "150 TL altındaki kitapları listeler misin?",
+         'Sisifos Söyleni 110 TL. "Sipariş vermek istiyorum: kitap_id = 6, adet = 1" '
+         "yazarsanız sipariş verebilirim.", [camus], False),
         ("yapılmamış sipariş iddiası", "Camus'dan 2 tane sipariş ver.",
          'Kitap "Sisifos Söyleni" için 2 adet sipariş verildi.', [camus], True),
         ("gerçek sipariş", "Camus'dan 2 tane sipariş ver.",
@@ -573,9 +640,10 @@ def _guardrail_testi() -> None:
             tur.araclar = [AracIzi(ad=a, argumanlar=g, sonuc=s) for a, g, s in cagrilar]
             durum.turlar.append(tur)
         ihlal = _dogrulanmamis_veri(soru, yanit, durum)
-        gecti = bool(ihlal) == ihlal_bekleniyor
+        gecti = (ihlal is not None) == ihlal_bekleniyor
         basarisiz += not gecti
-        print(f"  [{'OK ' if gecti else 'HATA'}] {ad:<24} -> {ihlal or 'temiz'}")
+        aciklama = f"{ihlal.mesaj} [{ihlal.tur}]" if ihlal else "temiz"
+        print(f"  [{'OK ' if gecti else 'HATA'}] {ad:<28} -> {aciklama}")
 
     print(f"\n{len(vakalar) - basarisiz}/{len(vakalar)} vaka geçti.")
     if basarisiz:

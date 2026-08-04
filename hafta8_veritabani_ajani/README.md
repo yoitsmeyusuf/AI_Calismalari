@@ -9,8 +9,9 @@ iptal edip stoğu geri veriyor.
 geri kalanıyla aynı alanda kalsın diye kitapçıyı felsefe üzerine kurdum
 (15 kitap, 14 yazar); mekanizma herhangi bir mağaza için birebir aynı.
 
-**Canlı demo:** *(Space henüz yayınlanmadı — `deploy_space.py` hazır, çalıştırma
-adımları aşağıda.)*
+**Canlı demo:** [huggingface.co/spaces/yoitsmeyusuf/kitapci-siparis-ajani](https://huggingface.co/spaces/yoitsmeyusuf/kitapci-siparis-ajani)
+— ücretsiz **ZeroGPU** (H200 dilimi) üzerinde, model (`Qwen2.5-7B-Instruct`)
+Space'in içinde çalışıyor.
 
 ## Dosyalar
 
@@ -126,7 +127,7 @@ Nihai yanıt kullanıcıya gitmeden önce şunlar denetleniyor:
 | 1 | Katalog/sipariş sorusuna **hiç araç çağrılmadan** cevap verilmiş mi? | Modelin kendi belleğinden katalog uydurması |
 | 2 | "Siparişiniz alındı" denmiş ama **yazan araç çalışmamış** mı? | Yapılmamış siparişin yapılmış gibi sunulması |
 | 3 | Cevaptaki `SIP-...` kodu araç çıktısında geçiyor mu? | Uydurma sipariş kodu |
-| 4 | Tırnak içindeki kitap adı araç çıktısında ya da kullanıcının sorusunda geçiyor mu? | Uydurma kitap adı |
+| 4 | Tırnak içindeki **kitap adına benzeyen** ifade araç çıktısında ya da kullanıcının sorusunda geçiyor mu? | Uydurma kitap adı |
 | 5 | Cevaptaki TL tutarı araç çıktısındaki fiyatlarla açıklanabiliyor mu? | Uydurma fiyat |
 
 İhlal varsa modelden bir kez düzeltme isteniyor **ve o tur araç çağrısı zorunlu
@@ -134,9 +135,21 @@ tutuluyor** (`arac_zorla=True`; yerel arka uçta üretim istemine `<tool_call>`
 açılış etiketini biz ekliyoruz, API arka ucunda `tool_choice="required"`).
 Müdahale iz panelinde `[!] harness uyarısı` satırı olarak görünüyor.
 
+Zorlanan turda modele **yalnızca okuyan araçlar açılıyor** — tek istisna 2.
+kontrol (kullanıcı zaten sipariş istemiş, doğru düzeltme `create_order`
+çağırmak). Bunun sebebi canlı Space'te görülen bir yanlış alarm: guardrail
+tetiklendiğinde model, zorunlu tutulan turda `create_order` çağırıp kullanıcının
+istemediği bir sipariş oluşturdu. Guardrail'in kendisi veri yazdırmamalı.
+
 Model ısrar ederse döngü kilitlenmiyor: cevap veriliyor ama üzerine
 **"⚠️ Doğrulanmadı"** uyarısı ekleniyor. Yani doğrulanmamış hiçbir bilgi
 kullanıcıya olgu gibi sunulmuyor.
+
+4. kontrolde her tırnaklı ifade değil, **kitap adına benzeyenler** taranıyor:
+sipariş durumları ve araç adları muaf, `=` / `:` içeren ya da 6 kelimeden uzun
+ifadeler de eleniyor (kitap adları kısa isim öbekleri). Bu filtre de canlı
+Space'ten geldi — model cevabına tırnak içinde bir talimat satırı koymuştu ve
+guardrail bunu uydurma kitap sanmıştı.
 
 5. kontrolde tutarların birebir eşitliğinin yanı sıra **birim fiyat × adet**
 çarpımlarına da izin veriliyor (1-10): kullanıcı "3 tane alsam kaç eder?" diye
@@ -150,24 +163,26 @@ Guardrail'i modele hiç gitmeden test etmek için:
 ```
 
 ```text
-  [OK ] araç çağrılmadı          -> hiç araç çağrılmadan katalog/sipariş bilgisi verildi
-  [OK ] alakasız soru, araç yok  -> temiz
-  [OK ] uydurma kitap adı        -> araç çıktısında olmayan kitap/ifade: “Yaratıcılık ve Hiçlik”
-  [OK ] gerçek kitap adı         -> temiz
-  [OK ] tırnakta durum adı       -> temiz
-  [OK ] yapılmamış sipariş iddiası -> sipariş/iptal yapıldığı söylendi ama veritabanına yazan araç çalışmadı
-  [OK ] gerçek sipariş           -> temiz
-  [OK ] sipariş verilemedi       -> temiz
-  [OK ] uydurma sipariş kodu     -> araç çıktısında olmayan sipariş kodu: SIP-4242
-  [OK ] uydurma fiyat            -> araç çıktısında olmayan fiyat: 89 TL
-  [OK ] birim fiyat x adet       -> temiz
+  [OK ] araç çağrılmadı              -> hiç araç çağrılmadan katalog/sipariş bilgisi verildi [arac_yok]
+  [OK ] alakasız soru, araç yok      -> temiz
+  [OK ] uydurma kitap adı            -> araç çıktısında olmayan kitap/ifade: “Yaratıcılık ve Hiçlik” [kitap]
+  [OK ] gerçek kitap adı             -> temiz
+  [OK ] tırnakta durum adı           -> temiz
+  [OK ] tırnakta talimat metni       -> temiz
+  [OK ] yapılmamış sipariş iddiası   -> sipariş/iptal yapıldığı söylendi ama veritabanına yazan araç çalışmadı [yazma_iddiasi]
+  [OK ] gerçek sipariş               -> temiz
+  [OK ] sipariş verilemedi           -> temiz
+  [OK ] uydurma sipariş kodu         -> araç çıktısında olmayan sipariş kodu: SIP-4242 [kod]
+  [OK ] uydurma fiyat                -> araç çıktısında olmayan fiyat: 89 TL [fiyat]
+  [OK ] birim fiyat x adet           -> temiz
 
-11/11 vaka geçti.
+12/12 vaka geçti.
 ```
 
 Vakalar uydurma değil, **gerçek çalıştırmalardan derlendi**: "uydurma kitap adı"
-satırı Qwen2.5-7B'nin, "yapılmamış sipariş iddiası" satırı Qwen2.5-0.5B'nin
-canlı olarak yaptığı halüsinasyonların birebir kaydı (aşağıda).
+satırı Qwen2.5-7B'nin, "yapılmamış sipariş iddiası" satırı Qwen2.5-0.5B'nin,
+"tırnakta talimat metni" satırı ise canlı Space'te görülen bir yanlış alarmın
+birebir kaydı (aşağıda).
 
 ## Örnek çıktı — ödevin istediği akış
 
@@ -283,6 +298,27 @@ lütfen esas almayın.
 Guardrail'in sınırı burada net görünüyor: **bir araç çağrısını zorlayabiliyor
 ama doğru aracı seçtiremiyor.** Model kapasitesinin altına inildiğinde
 yapılabilecek en iyi şey, yanlış bilgiyi olgu gibi sunmamak.
+
+**4. Guardrail'in kendi yanlış alarmı — ve yol açtığı istenmeyen yazma
+(canlı Space, `Qwen2.5-7B`).** Space yayına alındıktan sonra ilk canlı denemede
+*"150 TL altındaki kitapları listeler misin?"* sorusunda model, cevabının sonuna
+tırnak içinde bir talimat satırı koydu: `"Sipariş vermek istiyorum: kitap_id = 6,
+adet = 1"`. 4. kontrol bunu uydurma kitap adı sandı, düzeltme turunda araç
+çağrısı zorunlu tuttu, model de `create_order` çağırıp **kullanıcının hiç
+istemediği bir sipariş oluşturdu** (SIP-1004).
+
+Guardrail'in veri yazdırması kabul edilebilir bir davranış değil; iki değişiklik
+yaptım:
+
+- **Zorlanan turda yalnızca okuyan araçlar açılıyor.** Tek istisna 2. kontrol
+  (`Ihlal.yazma_gerektirir`): orada kullanıcı zaten sipariş istemiştir, doğru
+  düzeltme `create_order` çağırmaktır. Diğer bütün ihlallerde uydurma veriyi
+  *sorgulamak* yeterli.
+- **Tırnaklı ifade artık doğrudan kitap adı sayılmıyor** (`_kitap_adina_benziyor`):
+  `=` / `:` içerenler ve 6 kelimeden uzunlar eleniyor.
+
+Aynı senaryo düzeltmeden sonra temiz geçiyor (aşağıdaki canlı çıktıda "150 TL
+altındaki kitaplar" satırı: 1 araç çağrısı, 0 DB yazma).
 
 ## Çalıştırma
 
