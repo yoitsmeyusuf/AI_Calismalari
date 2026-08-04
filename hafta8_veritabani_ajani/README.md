@@ -92,10 +92,7 @@ belirlediği için Türkçe daha isabetli.
 
 `create_order` yalnızca **veritabanındaki bir `kitap_id`** ile çalışıyor. Model
 kitabı kendi belleğinden uydurup sipariş veremiyor; önce `search_books` çağırıp
-gerçek id'yi almak zorunda. Ödevin istediği **iki turlu zincir** buradan doğuyor
-ve 7. haftadaki `convert_temperature` numarasının aksine bu sefer zorlama
-gerekmedi — çünkü uydurma id ile araç zaten hata döndürüyor, model tahmine
-mecbur kalmıyor.
+gerçek id'yi almak zorunda.
 
 Araç hataları exception olarak yukarı fırlatılmıyor: `araci_calistir()` her zaman
 bir sözlük döndürüyor, hata durumunda `{"hata": "..."}`. Model bunu okuyup
@@ -104,9 +101,6 @@ sipariş iptal edilemez...). Bütün hata yolları `araclar.py`'yi tek başına
 çalıştırınca test ediliyor.
 
 ## Halüsinasyon engelleme
-
-Ödevin en kritik maddesi: *"Model veritabanında olmayan bir ürünü/bilgiyi varmış
-gibi sunmamalıdır."* Bunu üç katmanda ele aldım.
 
 **1. Sistem promptu.** "Katalog bilgisini kendi belleğinden verme", "listede
 olmayan kitabı önerme", adım adım çözülmüş bir sipariş örneği.
@@ -184,7 +178,7 @@ satırı Qwen2.5-7B'nin, "yapılmamış sipariş iddiası" satırı Qwen2.5-0.5B
 "tırnakta talimat metni" satırı ise canlı Space'te görülen bir yanlış alarmın
 birebir kaydı (aşağıda).
 
-## Örnek çıktı — ödevin istediği akış
+## Örnek çıktı
 
 `Qwen/Qwen3-Coder-30B-A3B-Instruct`, HF Inference Providers üzerinden
 (`TOOL_BACKEND=api`). Terminal çıktısının birebir kopyası:
@@ -328,7 +322,8 @@ uv pip install --python .venv/bin/python -r hafta8_veritabani_ajani/requirements
 .venv/bin/python hafta8_veritabani_ajani/veritabani.py --sifirla  # DB'yi kur + içeriğini dök
 .venv/bin/python hafta8_veritabani_ajani/araclar.py               # 4 aracı + hata yollarını dene
 .venv/bin/python hafta8_veritabani_ajani/ajan.py --guardrail      # guardrail testi (modelsiz)
-.venv/bin/python hafta8_veritabani_ajani/ajan.py                  # ödevin örnek akışı
+.venv/bin/python hafta8_veritabani_ajani/ajan.py                  
+
 .venv/bin/python hafta8_veritabani_ajani/app.py                   # Gradio arayüzü (localhost:7860)
 ```
 
@@ -385,8 +380,7 @@ başlangıç durumuna döndürüyor (demo temizliği).
   etkiliyor, ZeroGPU'da model Space'in içinde koştuğu için Space bundan
   etkilenmiyor.
 - **Sipariş başına tek kitap.** Sepet (çok kalemli sipariş) tabloyu üçe
-  çıkarırdı; ödevin kapsamı için tek kalem yeterli ve araç şeması sade kalıyor,
-  model daha az hata yapıyor.
+  çıkarırdı.
 - **Sohbet geçmişine araç mesajları taşınmıyor** — her yeni soru kendi araç
   zincirini kuruyor, yalnızca kullanıcı/asistan metinleri bağlam olarak gidiyor
   (7. haftadaki tercihin aynısı).
