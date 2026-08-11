@@ -1,0 +1,748 @@
+{
+  "en_iyi_esik": 0.56,
+  "tablo": [
+    {
+      "esik": 0.3,
+      "pozitif_dogru": 20,
+      "pozitif_dogru_top1": 13,
+      "negatif_dogru": 3,
+      "toplam_dogru": 23,
+      "dogruluk": 0.7666666666666667
+    },
+    {
+      "esik": 0.31,
+      "pozitif_dogru": 20,
+      "pozitif_dogru_top1": 13,
+      "negatif_dogru": 3,
+      "toplam_dogru": 23,
+      "dogruluk": 0.7666666666666667
+    },
+    {
+      "esik": 0.32,
+      "pozitif_dogru": 20,
+      "pozitif_dogru_top1": 13,
+      "negatif_dogru": 3,
+      "toplam_dogru": 23,
+      "dogruluk": 0.7666666666666667
+    },
+    {
+      "esik": 0.33,
+      "pozitif_dogru": 20,
+      "pozitif_dogru_top1": 13,
+      "negatif_dogru": 3,
+      "toplam_dogru": 23,
+      "dogruluk": 0.7666666666666667
+    },
+    {
+      "esik": 0.34,
+      "pozitif_dogru": 20,
+      "pozitif_dogru_top1": 13,
+      "negatif_dogru": 3,
+      "toplam_dogru": 23,
+      "dogruluk": 0.7666666666666667
+    },
+    {
+      "esik": 0.35,
+      "pozitif_dogru": 20,
+      "pozitif_dogru_top1": 13,
+      "negatif_dogru": 3,
+      "toplam_dogru": 23,
+      "dogruluk": 0.7666666666666667
+    },
+    {
+      "esik": 0.36,
+      "pozitif_dogru": 20,
+      "pozitif_dogru_top1": 13,
+      "negatif_dogru": 3,
+      "toplam_dogru": 23,
+      "dogruluk": 0.7666666666666667
+    },
+    {
+      "esik": 0.37,
+      "pozitif_dogru": 20,
+      "pozitif_dogru_top1": 13,
+      "negatif_dogru": 4,
+      "toplam_dogru": 24,
+      "dogruluk": 0.8
+    },
+    {
+      "esik": 0.38,
+      "pozitif_dogru": 20,
+      "pozitif_dogru_top1": 13,
+      "negatif_dogru": 4,
+      "toplam_dogru": 24,
+      "dogruluk": 0.8
+    },
+    {
+      "esik": 0.39,
+      "pozitif_dogru": 20,
+      "pozitif_dogru_top1": 13,
+      "negatif_dogru": 4,
+      "toplam_dogru": 24,
+      "dogruluk": 0.8
+    },
+    {
+      "esik": 0.4,
+      "pozitif_dogru": 20,
+      "pozitif_dogru_top1": 13,
+      "negatif_dogru": 5,
+      "toplam_dogru": 25,
+      "dogruluk": 0.8333333333333334
+    },
+    {
+      "esik": 0.41,
+      "pozitif_dogru": 20,
+      "pozitif_dogru_top1": 13,
+      "negatif_dogru": 5,
+      "toplam_dogru": 25,
+      "dogruluk": 0.8333333333333334
+    },
+    {
+      "esik": 0.42,
+      "pozitif_dogru": 20,
+      "pozitif_dogru_top1": 13,
+      "negatif_dogru": 5,
+      "toplam_dogru": 25,
+      "dogruluk": 0.8333333333333334
+    },
+    {
+      "esik": 0.43,
+      "pozitif_dogru": 20,
+      "pozitif_dogru_top1": 13,
+      "negatif_dogru": 6,
+      "toplam_dogru": 26,
+      "dogruluk": 0.8666666666666667
+    },
+    {
+      "esik": 0.44,
+      "pozitif_dogru": 20,
+      "pozitif_dogru_top1": 13,
+      "negatif_dogru": 6,
+      "toplam_dogru": 26,
+      "dogruluk": 0.8666666666666667
+    },
+    {
+      "esik": 0.45,
+      "pozitif_dogru": 20,
+      "pozitif_dogru_top1": 13,
+      "negatif_dogru": 6,
+      "toplam_dogru": 26,
+      "dogruluk": 0.8666666666666667
+    },
+    {
+      "esik": 0.46,
+      "pozitif_dogru": 20,
+      "pozitif_dogru_top1": 13,
+      "negatif_dogru": 6,
+      "toplam_dogru": 26,
+      "dogruluk": 0.8666666666666667
+    },
+    {
+      "esik": 0.47,
+      "pozitif_dogru": 20,
+      "pozitif_dogru_top1": 13,
+      "negatif_dogru": 6,
+      "toplam_dogru": 26,
+      "dogruluk": 0.8666666666666667
+    },
+    {
+      "esik": 0.48,
+      "pozitif_dogru": 20,
+      "pozitif_dogru_top1": 13,
+      "negatif_dogru": 6,
+      "toplam_dogru": 26,
+      "dogruluk": 0.8666666666666667
+    },
+    {
+      "esik": 0.49,
+      "pozitif_dogru": 20,
+      "pozitif_dogru_top1": 13,
+      "negatif_dogru": 6,
+      "toplam_dogru": 26,
+      "dogruluk": 0.8666666666666667
+    },
+    {
+      "esik": 0.5,
+      "pozitif_dogru": 20,
+      "pozitif_dogru_top1": 13,
+      "negatif_dogru": 6,
+      "toplam_dogru": 26,
+      "dogruluk": 0.8666666666666667
+    },
+    {
+      "esik": 0.51,
+      "pozitif_dogru": 20,
+      "pozitif_dogru_top1": 13,
+      "negatif_dogru": 6,
+      "toplam_dogru": 26,
+      "dogruluk": 0.8666666666666667
+    },
+    {
+      "esik": 0.52,
+      "pozitif_dogru": 20,
+      "pozitif_dogru_top1": 13,
+      "negatif_dogru": 6,
+      "toplam_dogru": 26,
+      "dogruluk": 0.8666666666666667
+    },
+    {
+      "esik": 0.53,
+      "pozitif_dogru": 20,
+      "pozitif_dogru_top1": 13,
+      "negatif_dogru": 7,
+      "toplam_dogru": 27,
+      "dogruluk": 0.9
+    },
+    {
+      "esik": 0.54,
+      "pozitif_dogru": 20,
+      "pozitif_dogru_top1": 13,
+      "negatif_dogru": 7,
+      "toplam_dogru": 27,
+      "dogruluk": 0.9
+    },
+    {
+      "esik": 0.55,
+      "pozitif_dogru": 20,
+      "pozitif_dogru_top1": 13,
+      "negatif_dogru": 8,
+      "toplam_dogru": 28,
+      "dogruluk": 0.9333333333333333
+    },
+    {
+      "esik": 0.56,
+      "pozitif_dogru": 20,
+      "pozitif_dogru_top1": 13,
+      "negatif_dogru": 8,
+      "toplam_dogru": 28,
+      "dogruluk": 0.9333333333333333
+    },
+    {
+      "esik": 0.57,
+      "pozitif_dogru": 19,
+      "pozitif_dogru_top1": 13,
+      "negatif_dogru": 8,
+      "toplam_dogru": 27,
+      "dogruluk": 0.9
+    },
+    {
+      "esik": 0.58,
+      "pozitif_dogru": 19,
+      "pozitif_dogru_top1": 13,
+      "negatif_dogru": 8,
+      "toplam_dogru": 27,
+      "dogruluk": 0.9
+    },
+    {
+      "esik": 0.59,
+      "pozitif_dogru": 19,
+      "pozitif_dogru_top1": 13,
+      "negatif_dogru": 8,
+      "toplam_dogru": 27,
+      "dogruluk": 0.9
+    },
+    {
+      "esik": 0.6,
+      "pozitif_dogru": 15,
+      "pozitif_dogru_top1": 9,
+      "negatif_dogru": 8,
+      "toplam_dogru": 23,
+      "dogruluk": 0.7666666666666667
+    },
+    {
+      "esik": 0.61,
+      "pozitif_dogru": 13,
+      "pozitif_dogru_top1": 9,
+      "negatif_dogru": 9,
+      "toplam_dogru": 22,
+      "dogruluk": 0.7333333333333333
+    },
+    {
+      "esik": 0.62,
+      "pozitif_dogru": 13,
+      "pozitif_dogru_top1": 9,
+      "negatif_dogru": 9,
+      "toplam_dogru": 22,
+      "dogruluk": 0.7333333333333333
+    },
+    {
+      "esik": 0.63,
+      "pozitif_dogru": 13,
+      "pozitif_dogru_top1": 9,
+      "negatif_dogru": 10,
+      "toplam_dogru": 23,
+      "dogruluk": 0.7666666666666667
+    },
+    {
+      "esik": 0.64,
+      "pozitif_dogru": 13,
+      "pozitif_dogru_top1": 9,
+      "negatif_dogru": 10,
+      "toplam_dogru": 23,
+      "dogruluk": 0.7666666666666667
+    },
+    {
+      "esik": 0.65,
+      "pozitif_dogru": 13,
+      "pozitif_dogru_top1": 9,
+      "negatif_dogru": 10,
+      "toplam_dogru": 23,
+      "dogruluk": 0.7666666666666667
+    },
+    {
+      "esik": 0.66,
+      "pozitif_dogru": 13,
+      "pozitif_dogru_top1": 9,
+      "negatif_dogru": 10,
+      "toplam_dogru": 23,
+      "dogruluk": 0.7666666666666667
+    },
+    {
+      "esik": 0.67,
+      "pozitif_dogru": 11,
+      "pozitif_dogru_top1": 8,
+      "negatif_dogru": 10,
+      "toplam_dogru": 21,
+      "dogruluk": 0.7
+    },
+    {
+      "esik": 0.68,
+      "pozitif_dogru": 11,
+      "pozitif_dogru_top1": 8,
+      "negatif_dogru": 10,
+      "toplam_dogru": 21,
+      "dogruluk": 0.7
+    },
+    {
+      "esik": 0.69,
+      "pozitif_dogru": 11,
+      "pozitif_dogru_top1": 8,
+      "negatif_dogru": 10,
+      "toplam_dogru": 21,
+      "dogruluk": 0.7
+    },
+    {
+      "esik": 0.7,
+      "pozitif_dogru": 9,
+      "pozitif_dogru_top1": 6,
+      "negatif_dogru": 10,
+      "toplam_dogru": 19,
+      "dogruluk": 0.6333333333333333
+    },
+    {
+      "esik": 0.71,
+      "pozitif_dogru": 8,
+      "pozitif_dogru_top1": 6,
+      "negatif_dogru": 10,
+      "toplam_dogru": 18,
+      "dogruluk": 0.6
+    },
+    {
+      "esik": 0.72,
+      "pozitif_dogru": 8,
+      "pozitif_dogru_top1": 6,
+      "negatif_dogru": 10,
+      "toplam_dogru": 18,
+      "dogruluk": 0.6
+    },
+    {
+      "esik": 0.73,
+      "pozitif_dogru": 7,
+      "pozitif_dogru_top1": 5,
+      "negatif_dogru": 10,
+      "toplam_dogru": 17,
+      "dogruluk": 0.5666666666666667
+    },
+    {
+      "esik": 0.74,
+      "pozitif_dogru": 5,
+      "pozitif_dogru_top1": 4,
+      "negatif_dogru": 10,
+      "toplam_dogru": 15,
+      "dogruluk": 0.5
+    },
+    {
+      "esik": 0.75,
+      "pozitif_dogru": 5,
+      "pozitif_dogru_top1": 4,
+      "negatif_dogru": 10,
+      "toplam_dogru": 15,
+      "dogruluk": 0.5
+    },
+    {
+      "esik": 0.76,
+      "pozitif_dogru": 4,
+      "pozitif_dogru_top1": 3,
+      "negatif_dogru": 10,
+      "toplam_dogru": 14,
+      "dogruluk": 0.4666666666666667
+    },
+    {
+      "esik": 0.77,
+      "pozitif_dogru": 3,
+      "pozitif_dogru_top1": 2,
+      "negatif_dogru": 10,
+      "toplam_dogru": 13,
+      "dogruluk": 0.43333333333333335
+    },
+    {
+      "esik": 0.78,
+      "pozitif_dogru": 2,
+      "pozitif_dogru_top1": 2,
+      "negatif_dogru": 10,
+      "toplam_dogru": 12,
+      "dogruluk": 0.4
+    },
+    {
+      "esik": 0.79,
+      "pozitif_dogru": 1,
+      "pozitif_dogru_top1": 1,
+      "negatif_dogru": 10,
+      "toplam_dogru": 11,
+      "dogruluk": 0.36666666666666664
+    },
+    {
+      "esik": 0.8,
+      "pozitif_dogru": 0,
+      "pozitif_dogru_top1": 0,
+      "negatif_dogru": 10,
+      "toplam_dogru": 10,
+      "dogruluk": 0.3333333333333333
+    },
+    {
+      "esik": 0.81,
+      "pozitif_dogru": 0,
+      "pozitif_dogru_top1": 0,
+      "negatif_dogru": 10,
+      "toplam_dogru": 10,
+      "dogruluk": 0.3333333333333333
+    },
+    {
+      "esik": 0.82,
+      "pozitif_dogru": 0,
+      "pozitif_dogru_top1": 0,
+      "negatif_dogru": 10,
+      "toplam_dogru": 10,
+      "dogruluk": 0.3333333333333333
+    },
+    {
+      "esik": 0.83,
+      "pozitif_dogru": 0,
+      "pozitif_dogru_top1": 0,
+      "negatif_dogru": 10,
+      "toplam_dogru": 10,
+      "dogruluk": 0.3333333333333333
+    },
+    {
+      "esik": 0.84,
+      "pozitif_dogru": 0,
+      "pozitif_dogru_top1": 0,
+      "negatif_dogru": 10,
+      "toplam_dogru": 10,
+      "dogruluk": 0.3333333333333333
+    },
+    {
+      "esik": 0.85,
+      "pozitif_dogru": 0,
+      "pozitif_dogru_top1": 0,
+      "negatif_dogru": 10,
+      "toplam_dogru": 10,
+      "dogruluk": 0.3333333333333333
+    },
+    {
+      "esik": 0.86,
+      "pozitif_dogru": 0,
+      "pozitif_dogru_top1": 0,
+      "negatif_dogru": 10,
+      "toplam_dogru": 10,
+      "dogruluk": 0.3333333333333333
+    },
+    {
+      "esik": 0.87,
+      "pozitif_dogru": 0,
+      "pozitif_dogru_top1": 0,
+      "negatif_dogru": 10,
+      "toplam_dogru": 10,
+      "dogruluk": 0.3333333333333333
+    },
+    {
+      "esik": 0.88,
+      "pozitif_dogru": 0,
+      "pozitif_dogru_top1": 0,
+      "negatif_dogru": 10,
+      "toplam_dogru": 10,
+      "dogruluk": 0.3333333333333333
+    },
+    {
+      "esik": 0.89,
+      "pozitif_dogru": 0,
+      "pozitif_dogru_top1": 0,
+      "negatif_dogru": 10,
+      "toplam_dogru": 10,
+      "dogruluk": 0.3333333333333333
+    },
+    {
+      "esik": 0.9,
+      "pozitif_dogru": 0,
+      "pozitif_dogru_top1": 0,
+      "negatif_dogru": 10,
+      "toplam_dogru": 10,
+      "dogruluk": 0.3333333333333333
+    }
+  ],
+  "pozitif": [
+    {
+      "soru": "Kalp krizi tıp dilinde hangi isimle adlandırılır?",
+      "gold_chunk_id": "medipol-0080-01-0",
+      "top1_skor": 0.6004866361618042,
+      "top1_id": "medipol-0106-13-0",
+      "gold_sirasi": 3,
+      "parent_sirasi": 3,
+      "kesin_top1_skor": 0.6004864573478699
+    },
+    {
+      "soru": "Boyun düzleşmesine hangi vitamin ve mineral eksiklikleri yol açabilir?",
+      "gold_chunk_id": "guven-0094-01-0",
+      "top1_skor": 0.6912345886230469,
+      "top1_id": "guven-0094-01-0",
+      "gold_sirasi": 1,
+      "parent_sirasi": 1,
+      "kesin_top1_skor": 0.6912343502044678
+    },
+    {
+      "soru": "Akciğer kanserinin diğer organlara yayılımını değerlendirmek için hangi görüntüleme yöntemi kullanılır?",
+      "gold_chunk_id": "medipol-0121-05-0",
+      "top1_skor": 0.5922117829322815,
+      "top1_id": "medipol-0121-05-0",
+      "gold_sirasi": 1,
+      "parent_sirasi": 1,
+      "kesin_top1_skor": 0.5922116041183472
+    },
+    {
+      "soru": "Kızamıkta deri döküntüsü genellikle kaç gün sürer?",
+      "gold_chunk_id": "guven-0051-01-2",
+      "top1_skor": 0.7583343982696533,
+      "top1_id": "guven-0051-01-2",
+      "gold_sirasi": 1,
+      "parent_sirasi": 1,
+      "kesin_top1_skor": 0.7583343982696533
+    },
+    {
+      "soru": "Divertikül hastalığında uygulanabilen iki ana ameliyat türü nedir?",
+      "gold_chunk_id": "florence-0063-09-0",
+      "top1_skor": 0.6696004867553711,
+      "top1_id": "guven-0070-05-0",
+      "gold_sirasi": 3,
+      "parent_sirasi": 3,
+      "kesin_top1_skor": 0.6696004867553711
+    },
+    {
+      "soru": "Şikayete yol açmış safra kesesi taşının kesin tedavisi nedir?",
+      "gold_chunk_id": "medipol-0102-05-0",
+      "top1_skor": 0.7942565679550171,
+      "top1_id": "medipol-0102-05-0",
+      "gold_sirasi": 1,
+      "parent_sirasi": 1,
+      "kesin_top1_skor": 0.7942562103271484
+    },
+    {
+      "soru": "Gripte ateş hangi derece aralığında seyreder?",
+      "gold_chunk_id": "florence-0053-04-0",
+      "top1_skor": 0.6034258008003235,
+      "top1_id": "florence-0082-03-0",
+      "gold_sirasi": 2,
+      "parent_sirasi": 2,
+      "kesin_top1_skor": 0.6034256815910339
+    },
+    {
+      "soru": "Streptokokkus Pyogenes bakterisi vücudun hangi bölgelerinde bulunabilir?",
+      "gold_chunk_id": "guven-0041-00-0",
+      "top1_skor": 0.6695452928543091,
+      "top1_id": "guven-0041-00-0",
+      "gold_sirasi": 1,
+      "parent_sirasi": 1,
+      "kesin_top1_skor": 0.6695452928543091
+    },
+    {
+      "soru": "Sepsis tedavisinde ilk müdahale olarak genellikle ne verilir?",
+      "gold_chunk_id": "florence-0000-06-0",
+      "top1_skor": 0.5695669651031494,
+      "top1_id": "guven-0014-05-0",
+      "gold_sirasi": 2,
+      "parent_sirasi": 2,
+      "kesin_top1_skor": 0.5695668458938599
+    },
+    {
+      "soru": "Lazer ameliyatından sonra hastaların yüzde kaçı gözlükten kurtulur?",
+      "gold_chunk_id": "medipol-0019-08-0",
+      "top1_skor": 0.7820727825164795,
+      "top1_id": "medipol-0019-08-0",
+      "gold_sirasi": 1,
+      "parent_sirasi": 1,
+      "kesin_top1_skor": 0.7820727229118347
+    },
+    {
+      "soru": "Aristo diyetinde haftada en az kaç gün balık tüketilmesi önerilir?",
+      "gold_chunk_id": "florence-0072-03-0",
+      "top1_skor": 0.7303199172019958,
+      "top1_id": "florence-0072-07-0",
+      "gold_sirasi": 2,
+      "parent_sirasi": 2,
+      "kesin_top1_skor": 0.7303194999694824
+    },
+    {
+      "soru": "Türkiye'de ailesel hiperkolesterolemi sıklığı dünya ortalamasına göre nasıldır?",
+      "gold_chunk_id": "guven-0033-02-0",
+      "top1_skor": 0.5934765338897705,
+      "top1_id": "guven-0033-02-0",
+      "gold_sirasi": 1,
+      "parent_sirasi": 1,
+      "kesin_top1_skor": 0.5934767127037048
+    },
+    {
+      "soru": "Akne tedavisinde cilt günde kaç kez yıkanmalıdır?",
+      "gold_chunk_id": "guven-0062-06-0",
+      "top1_skor": 0.7099189758300781,
+      "top1_id": "medipol-0099-03-0",
+      "gold_sirasi": 4,
+      "parent_sirasi": 4,
+      "kesin_top1_skor": 0.7099189758300781
+    },
+    {
+      "soru": "Meme kanseri hangi bölüm tarafından incelenir ve tedavi edilir?",
+      "gold_chunk_id": "florence-0094-05-0",
+      "top1_skor": 0.6926959753036499,
+      "top1_id": "florence-0094-05-0",
+      "gold_sirasi": 1,
+      "parent_sirasi": 1,
+      "kesin_top1_skor": 0.6926959156990051
+    },
+    {
+      "soru": "İnvazif grup A streptokok enfeksiyonunun erken bulguları nelerdir?",
+      "gold_chunk_id": "guven-0041-04-0",
+      "top1_skor": 0.7246279716491699,
+      "top1_id": "guven-0041-04-0",
+      "gold_sirasi": 1,
+      "parent_sirasi": 1,
+      "kesin_top1_skor": 0.7246278524398804
+    },
+    {
+      "soru": "Ispanak satın alırken yapraklarının rengi nasıl olmalıdır?",
+      "gold_chunk_id": "guven-0059-03-0",
+      "top1_skor": 0.5916360020637512,
+      "top1_id": "guven-0059-03-0",
+      "gold_sirasi": 1,
+      "parent_sirasi": 1,
+      "kesin_top1_skor": 0.5916361212730408
+    },
+    {
+      "soru": "Hayvan alerjisinin belirtileri nelerdir?",
+      "gold_chunk_id": "medipol-0000-02-0",
+      "top1_skor": 0.7636550068855286,
+      "top1_id": "medipol-0000-02-0",
+      "gold_sirasi": 1,
+      "parent_sirasi": 1,
+      "kesin_top1_skor": 0.763654887676239
+    },
+    {
+      "soru": "Varis hangi kişilerde daha sık görülür?",
+      "gold_chunk_id": "florence-0008-07-0",
+      "top1_skor": 0.5965427160263062,
+      "top1_id": "florence-0008-07-0",
+      "gold_sirasi": 1,
+      "parent_sirasi": 1,
+      "kesin_top1_skor": 0.5965427160263062
+    },
+    {
+      "soru": "Rozasea hastalığında genetik faktörlerin rolü nedir?",
+      "gold_chunk_id": "florence-0003-02-1",
+      "top1_skor": 0.7733509540557861,
+      "top1_id": "florence-0003-02-0",
+      "gold_sirasi": 2,
+      "parent_sirasi": 1,
+      "kesin_top1_skor": 0.7733508348464966
+    },
+    {
+      "soru": "Kanserden korunmak için göğüs ve prostat kanserine karşı hangi besin önerilir?",
+      "gold_chunk_id": "guven-0049-02-0",
+      "top1_skor": 0.7374503016471863,
+      "top1_id": "guven-0049-02-0",
+      "gold_sirasi": 1,
+      "parent_sirasi": 1,
+      "kesin_top1_skor": 0.7374500632286072
+    }
+  ],
+  "negatif": [
+    {
+      "soru": "Immanuel Kant'ın kategorik imperatif kavramı ne anlama gelir?",
+      "grup": "alan_disi",
+      "top1_skor": 0.2146783471107483,
+      "top1_baslik": "Bilinçaltı Nedir?",
+      "kesin_top1_skor": 0.21467839181423187
+    },
+    {
+      "soru": "Fenerbahçe kaç kez Süper Lig şampiyonu oldu?",
+      "grup": "alan_disi",
+      "top1_skor": 0.18025028705596924,
+      "top1_baslik": "Prof. Dr. Türker Özkan'a Avrupa El Cerrahisi'nde Önemli Ödül: El Cerrahisinin Devi",
+      "kesin_top1_skor": 0.18025028705596924
+    },
+    {
+      "soru": "Python'da bir listeyi nasıl ters çevirebilirim?",
+      "grup": "alan_disi",
+      "top1_skor": 0.18916785717010498,
+      "top1_baslik": "Şaşılık (Göz Kayması) Nedir? Nedenleri ve Tedavisi",
+      "kesin_top1_skor": 0.18916776776313782
+    },
+    {
+      "soru": "Sıtma hastalığı hangi sivrisinek türüyle bulaşır?",
+      "grup": "konu_yok",
+      "top1_skor": 0.6266828775405884,
+      "top1_baslik": "Sivrisinek Isırığına Ne İyi Gelir? Sivrisinek Isırığı Nasıl Geçer?",
+      "kesin_top1_skor": 0.6266828775405884
+    },
+    {
+      "soru": "Kuduz aşısı ısırıktan sonra kaç doz halinde uygulanır?",
+      "grup": "konu_yok",
+      "top1_skor": 0.5438104867935181,
+      "top1_baslik": "Riskli Gruplara Zatürre Aşısı Yapılması Hayati Önem Taşıyor",
+      "kesin_top1_skor": 0.5438106060028076
+    },
+    {
+      "soru": "Kistik fibrozis hastalığının kalıtım biçimi nedir?",
+      "grup": "konu_yok",
+      "top1_skor": 0.3646579384803772,
+      "top1_baslik": "Beyin Kisti Nedir? Beyin Kistinin Belirtileri Nelerdir? Beyin Kisti Tedavisi Nasıl Yapılır?",
+      "kesin_top1_skor": 0.364657998085022
+    },
+    {
+      "soru": "Laparoskopik kolesistektomi ameliyatı Medipol'de kaç TL tutuyor?",
+      "grup": "yakin_kacirma",
+      "top1_skor": 0.6095176339149475,
+      "top1_baslik": "Safra Kesesi Kanseri ve Tedavisi",
+      "kesin_top1_skor": 0.6095175743103027
+    },
+    {
+      "soru": "Kızamık aşısı Türkiye'de hangi ilaç firması tarafından üretiliyor?",
+      "grup": "yakin_kacirma",
+      "top1_skor": 0.5279194116592407,
+      "top1_baslik": "Kızamık Nedir? Belirtileri ve Tedavi Yöntemleri Nelerdir?",
+      "kesin_top1_skor": 0.5279192328453064
+    },
+    {
+      "soru": "Varis çorabı için hangi marka ve model numarası öneriliyor?",
+      "grup": "yakin_kacirma",
+      "top1_skor": 0.39394068717956543,
+      "top1_baslik": "Varis Nedir? Varis Belirtileri ve Tedavi Yöntemleri Nelerdir?",
+      "kesin_top1_skor": 0.39394068717956543
+    },
+    {
+      "soru": "Sepsis tedavisinde verilen antibiyotiğin kilogram başına dozu kaç miligramdır?",
+      "grup": "yakin_kacirma",
+      "top1_skor": 0.42627739906311035,
+      "top1_baslik": "İnvazif Grup A Streptokok Enfeksiyonu (iGAS) Hakkında Bilinmesi Gerekenler",
+      "kesin_top1_skor": 0.4262773096561432
+    }
+  ],
+  "hnsw_sapmasi": 0
+}

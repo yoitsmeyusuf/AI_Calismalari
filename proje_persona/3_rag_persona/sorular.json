@@ -1,0 +1,32 @@
+{
+  "_not": "Esik analizi test seti. Pozitiflerin bir kismi (turetilmis) 2_esik_analizi.py tarafindan chunk'lardan OTOMATIK uretiliyor ve gold_chunk_id tasiyor; buradakiler elle yazilan dogal kullanici mesajlari ve negatiflerdir. Sarki sozu metni bu dosyada YOK.",
+
+  "dogal_pozitif": [
+    "bugün kendimi çok yalnız hissediyorum",
+    "insanlara güvenmekten korkuyorum artık",
+    "hayallerimin peşinden gitmekten vazgeçtim galiba",
+    "geçmişte yaptığım hatalar aklımdan çıkmıyor",
+    "herkes beni yanlış anlıyor gibi geliyor",
+    "çok yoruldum, pes etmek üzereyim",
+    "sevdiğim insanı kaybettim ve nasıl devam edeceğimi bilmiyorum",
+    "zamanın ne kadar hızlı geçtiğini fark ettim",
+    "para her şeyi değiştiriyor, insanları da",
+    "kendimle barışık olmayı nasıl öğrenirim"
+  ],
+
+  "negatif": [
+    {"grup": "alan_disi", "soru": "Fenerbahçe kaç şampiyonluk kazandı?"},
+    {"grup": "alan_disi", "soru": "Python'da bir listeyi nasıl ters çeviririm?"},
+    {"grup": "alan_disi", "soru": "Mercimek çorbası tarifi verir misin?"},
+    {"grup": "alan_disi", "soru": "Bugün İstanbul'da hava nasıl olacak?"},
+
+    {"grup": "konu_yok", "soru": "Kuantum dolanıklığı nasıl çalışır?"},
+    {"grup": "konu_yok", "soru": "Osmanlı'da tımar sistemi neydi?"},
+    {"grup": "konu_yok", "soru": "Diyabet hastası günde kaç gram şeker tüketebilir?"},
+
+    {"grup": "yakin_kacirma", "soru": "Sagopa Kajmer'in konser bileti kaç TL?"},
+    {"grup": "yakin_kacirma", "soru": "Melankolia şirketi hangi yıl kuruldu?"},
+    {"grup": "yakin_kacirma", "soru": "Sagopa'nın en çok dinlenen şarkısı hangisi?"},
+    {"grup": "yakin_kacirma", "soru": "Bir rap albümü kaydetmek kaç saat sürer?"}
+  ]
+}

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>CORS kanıtı — :8080 → :8000</title>
+<style>
+  body { font: 15px/1.6 system-ui, sans-serif; max-width: 820px; margin: 2rem auto; padding: 0 1rem; }
+  h1 { font-size: 1.3rem; }
+  button { font: inherit; padding: .5rem .9rem; margin: .2rem .3rem .2rem 0; cursor: pointer; }
+  pre { background: #f4f4f5; padding: .8rem; border-radius: 6px; overflow-x: auto; white-space: pre-wrap; }
+  .ok { color: #15803d; } .err { color: #b91c1c; }
+  code { background: #f4f4f5; padding: .1rem .3rem; border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<h1>CORS kanıtı</h1>
+
+<p>Bu sayfa <code id="origin"></code> üzerinden servis ediliyor, API ise
+<code>http://127.0.0.1:8000</code> üzerinde. <strong>Farklı port = farklı
+origin</strong>, dolayısıyla her istek cross-origin.</p>
+
+<p>Sunucuyu <code>CORS_ACIK=0</code> ile başlatıp aynı düğmelere basın:
+istekler sunucuya <em>ulaşmaya devam eder</em> (uvicorn log'unda 200 görünür)
+ama tarayıcı yanıtı JS'e vermez. CORS bir sunucu koruması değil,
+<strong>tarayıcı</strong> kısıtıdır.</p>
+
+<p>
+  <button onclick="basitGet()">1. Basit GET (preflight yok)</button>
+  <button onclick="preflightliPost()">2. POST + özel başlık (preflight var)</button>
+  <button onclick="basligiOku()">3. Özel yanıt başlığını oku</button>
+</p>
+
+<pre id="cikti">Bir düğmeye basın…</pre>
+
+<script>
+const API = "http://127.0.0.1:8000";
+const cikti = document.getElementById("cikti");
+document.getElementById("origin").textContent = location.origin;
+
+function yaz(baslik, govde, hata) {
+  cikti.className = hata ? "err" : "ok";
+  cikti.textContent = `${hata ? "✗" : "✓"} ${baslik}\n\n${govde}`;
+}
+
+async function basitGet() {
+  // Content-Type yok, özel başlık yok -> "simple request".
+  // Preflight ATILMAZ; istek doğrudan gider, tarayıcı YANITI filtreler.
+  try {
+    const r = await fetch(`${API}/saglik`);
+    yaz("GET /saglik", JSON.stringify(await r.json(), null, 2), false);
+  } catch (e) {
+    yaz("GET /saglik engellendi", e.message +
+      "\n\nSunucu isteği aldı ve 200 döndü (uvicorn log'una bakın)." +
+      "\nTarayıcı Access-Control-Allow-Origin başlığını göremediği için" +
+      "\nyanıtı JS'e vermedi.", true);
+  }
+}
+
+async function preflightliPost() {
+  // application/json + özel başlık -> "simple request" değil.
+  // Tarayıcı önce OPTIONS (preflight) atar; sunucu izin vermezse
+  // asıl POST HİÇ GÖNDERİLMEZ. Ağ sekmesinde OPTIONS'ı göreceksiniz.
+  try {
+    const r = await fetch(`${API}/sarkilar`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "X-Istek-Kimligi": "cors-demo" },
+      body: JSON.stringify({
+        baslik: "Tarayıcıdan eklendi", album: "CORS Demo",
+        yil: 2024, sure_sn: 180, tur: "rap"
+      }),
+    });
+    yaz(`POST /sarkilar → ${r.status}`, JSON.stringify(await r.json(), null, 2), false);
+  } catch (e) {
+    yaz("POST /sarkilar engellendi", e.message +
+      "\n\nPreflight (OPTIONS) reddedildi, asıl POST hiç gönderilmedi." +
+      "\nAğ sekmesinde yalnızca OPTIONS satırını görürsünüz.", true);
+  }
+}
+
+async function basligiOku() {
+  // Sunucu X-Toplam-Kayit gönderiyor ama tarayıcı JS'e varsayılan olarak
+  // yalnızca birkaç "güvenli" başlığı gösterir. expose_headers gerekir.
+  try {
+    const r = await fetch(`${API}/sarkilar?limit=2`);
+    const h = r.headers.get("X-Toplam-Kayit");
+    yaz("X-Toplam-Kayit başlığı",
+      h === null
+        ? "null — sunucu gönderdi ama expose_headers'ta olmadığı için JS göremiyor."
+        : `${h} — expose_headers sayesinde okunabildi.`,
+      h === null);
+  } catch (e) {
+    yaz("İstek engellendi", e.message, true);
+  }
+}
+</script>
+</body>
+</html>

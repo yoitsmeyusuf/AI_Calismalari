@@ -1,0 +1,18 @@
+# 10. hafta: vektor veritabani + RAG arama.
+#
+# Bu hafta ust klasordeki venv kullaniliyor (magibu/.venv, Python 3.13) - 9.
+# haftada oldugu gibi. Orada torch/sentence-transformers/chromadb zaten kurulu,
+# sadece matplotlib eklendi. Repo kokundeki odevler/.venv'e dokunulmadi
+# (Python 3.10, sentence-transformers yok).
+#
+# Baska bir makinede kurmak icin:
+#   uv pip install --python <venv>/bin/python -r hafta10_vektor_veritabani/requirements.txt
+torch==2.10.0
+transformers==5.5.0
+sentence-transformers==5.6.0
+chromadb==1.5.9
+datasets==4.3.0
+huggingface_hub==1.23.0
+pyarrow==25.0.0
+numpy==2.5.1
+matplotlib==3.11.1

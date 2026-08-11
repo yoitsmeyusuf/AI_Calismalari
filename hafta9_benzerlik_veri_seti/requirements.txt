@@ -1,0 +1,10 @@
+# 9. hafta: cumle benzerligi veri seti (sentence1, sentence2, score).
+# Sadece veri hazirlama + Hub'a push; model calistirilmiyor, torch gerekmiyor.
+#
+# Bu hafta ust klasordeki venv kullaniliyor (magibu/.venv) - orada bu paketler
+# zaten kurulu, ek kurulum yapilmadi. Bu dosya baska bir makinede kurmak icin:
+#   uv pip install --python <venv>/bin/python -r hafta9_benzerlik_veri_seti/requirements.txt
+datasets==4.3.0
+huggingface_hub==1.25.1
+pandas==2.3.3
+python-dotenv==1.2.2

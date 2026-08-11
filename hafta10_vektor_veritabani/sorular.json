@@ -1,0 +1,147 @@
+{
+  "aciklama": "30 soruluk test seti. Pozitif sorular korpustaki chunk'lardan turetildi; gold_chunk_id o sorunun cevabini iceren chunk'in kimligi (recall olcmek icin). Negatifler uc gruba ayrildi: alan_disi (tamamen ilgisiz), konu_yok (tibbi ama bu 402 makalede gecmiyor), yakin_kacirma (ayni konu ailesinde ama korpusun cevaplamadigi soru). Esigi fiilen belirleyen yakin_kacirma grubu.",
+  "pozitif": [
+    {
+      "soru": "Kalp krizi tıp dilinde hangi isimle adlandırılır?",
+      "gold_chunk_id": "medipol-0080-01-0",
+      "beklenen_cevap": "miyokard enfarktüsü"
+    },
+    {
+      "soru": "Boyun düzleşmesine hangi vitamin ve mineral eksiklikleri yol açabilir?",
+      "gold_chunk_id": "guven-0094-01-0",
+      "beklenen_cevap": "demir, kalsiyum, magnezyum ve D vitamini eksikliği"
+    },
+    {
+      "soru": "Akciğer kanserinin diğer organlara yayılımını değerlendirmek için hangi görüntüleme yöntemi kullanılır?",
+      "gold_chunk_id": "medipol-0121-05-0",
+      "beklenen_cevap": "PET-CT"
+    },
+    {
+      "soru": "Kızamıkta deri döküntüsü genellikle kaç gün sürer?",
+      "gold_chunk_id": "guven-0051-01-2",
+      "beklenen_cevap": "6-7 gün"
+    },
+    {
+      "soru": "Divertikül hastalığında uygulanabilen iki ana ameliyat türü nedir?",
+      "gold_chunk_id": "florence-0063-09-0",
+      "beklenen_cevap": "birincil bağırsak rezeksiyonu ve kolostomi ile bağırsak rezeksiyonu"
+    },
+    {
+      "soru": "Şikayete yol açmış safra kesesi taşının kesin tedavisi nedir?",
+      "gold_chunk_id": "medipol-0102-05-0",
+      "beklenen_cevap": "kolesistektomi (laparoskopik)"
+    },
+    {
+      "soru": "Gripte ateş hangi derece aralığında seyreder?",
+      "gold_chunk_id": "florence-0053-04-0",
+      "beklenen_cevap": "38-41 °C"
+    },
+    {
+      "soru": "Streptokokkus Pyogenes bakterisi vücudun hangi bölgelerinde bulunabilir?",
+      "gold_chunk_id": "guven-0041-00-0",
+      "beklenen_cevap": "boğaz ve ciltte"
+    },
+    {
+      "soru": "Sepsis tedavisinde ilk müdahale olarak genellikle ne verilir?",
+      "gold_chunk_id": "florence-0000-06-0",
+      "beklenen_cevap": "geniş spektrumlu antibiyotikler"
+    },
+    {
+      "soru": "Lazer ameliyatından sonra hastaların yüzde kaçı gözlükten kurtulur?",
+      "gold_chunk_id": "medipol-0019-08-0",
+      "beklenen_cevap": "%98"
+    },
+    {
+      "soru": "Aristo diyetinde haftada en az kaç gün balık tüketilmesi önerilir?",
+      "gold_chunk_id": "florence-0072-03-0",
+      "beklenen_cevap": "en az iki gün"
+    },
+    {
+      "soru": "Türkiye'de ailesel hiperkolesterolemi sıklığı dünya ortalamasına göre nasıldır?",
+      "gold_chunk_id": "guven-0033-02-0",
+      "beklenen_cevap": "neredeyse iki katı"
+    },
+    {
+      "soru": "Akne tedavisinde cilt günde kaç kez yıkanmalıdır?",
+      "gold_chunk_id": "guven-0062-06-0",
+      "beklenen_cevap": "günde 2 kez"
+    },
+    {
+      "soru": "Meme kanseri hangi bölüm tarafından incelenir ve tedavi edilir?",
+      "gold_chunk_id": "florence-0094-05-0",
+      "beklenen_cevap": "genel cerrahi"
+    },
+    {
+      "soru": "İnvazif grup A streptokok enfeksiyonunun erken bulguları nelerdir?",
+      "gold_chunk_id": "guven-0041-04-0",
+      "beklenen_cevap": "yüksek ateş, ciddi kas ağrıları, yara bölgesinde artan ağrı ve şişlik, açıklanamayan kusma ve ishal"
+    },
+    {
+      "soru": "Ispanak satın alırken yapraklarının rengi nasıl olmalıdır?",
+      "gold_chunk_id": "guven-0059-03-0",
+      "beklenen_cevap": "canlı yeşil; sarı ya da kahverengi olmamalı"
+    },
+    {
+      "soru": "Hayvan alerjisinin belirtileri nelerdir?",
+      "gold_chunk_id": "medipol-0000-02-0",
+      "beklenen_cevap": "hapşırma, burun akıntısı, gözlerde kaşıntı ve sulanma, ciltte kızarıklık, nefes darlığı"
+    },
+    {
+      "soru": "Varis hangi kişilerde daha sık görülür?",
+      "gold_chunk_id": "florence-0008-07-0",
+      "beklenen_cevap": "aile geçmişi olanlar, kadınlar, yaşlılar"
+    },
+    {
+      "soru": "Rozasea hastalığında genetik faktörlerin rolü nedir?",
+      "gold_chunk_id": "florence-0003-02-1",
+      "beklenen_cevap": "hastaların çoğunda hastalığı geçiren bir akraba veya aile bireyi bulunur"
+    },
+    {
+      "soru": "Kanserden korunmak için göğüs ve prostat kanserine karşı hangi besin önerilir?",
+      "gold_chunk_id": "guven-0049-02-0",
+      "beklenen_cevap": "soya fasulyesi"
+    }
+  ],
+  "negatif": [
+    {
+      "soru": "Immanuel Kant'ın kategorik imperatif kavramı ne anlama gelir?",
+      "grup": "alan_disi"
+    },
+    {
+      "soru": "Fenerbahçe kaç kez Süper Lig şampiyonu oldu?",
+      "grup": "alan_disi"
+    },
+    {
+      "soru": "Python'da bir listeyi nasıl ters çevirebilirim?",
+      "grup": "alan_disi"
+    },
+    {
+      "soru": "Sıtma hastalığı hangi sivrisinek türüyle bulaşır?",
+      "grup": "konu_yok"
+    },
+    {
+      "soru": "Kuduz aşısı ısırıktan sonra kaç doz halinde uygulanır?",
+      "grup": "konu_yok"
+    },
+    {
+      "soru": "Kistik fibrozis hastalığının kalıtım biçimi nedir?",
+      "grup": "konu_yok"
+    },
+    {
+      "soru": "Laparoskopik kolesistektomi ameliyatı Medipol'de kaç TL tutuyor?",
+      "grup": "yakin_kacirma"
+    },
+    {
+      "soru": "Kızamık aşısı Türkiye'de hangi ilaç firması tarafından üretiliyor?",
+      "grup": "yakin_kacirma"
+    },
+    {
+      "soru": "Varis çorabı için hangi marka ve model numarası öneriliyor?",
+      "grup": "yakin_kacirma"
+    },
+    {
+      "soru": "Sepsis tedavisinde verilen antibiyotiğin kilogram başına dozu kaç miligramdır?",
+      "grup": "yakin_kacirma"
+    }
+  ]
+}
