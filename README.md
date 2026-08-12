@@ -94,6 +94,33 @@ Prompt ve araç çıktısındaki uyarılar tek başına yetmiyor; yanıt yayınl
 önce fiyatların, sipariş kodlarının ve kitap adlarının araç çıktısından geldiğini
 harness doğruluyor. Detay 8. haftanın README'sinde.
 
+**Öğrenen bellek (11. hafta — aynı soru ikinci kez sorulunca):**
+
+Boş bellekle başlayan yerel bir `chat.py` oturumundan (tam döküm ve diğer
+oturumlar [11. haftanın README'sinde](hafta11_ollama_asistan/README.md#örnek-konuşmalar-yerelde-test)):
+
+```
+Siz > python modulu bulunamiyor hatasi aliyorum ne yapmaliyim
+  🔧 knowledge_question({'question': 'python modulu bulunamiyor hatasi aliyorum ne yapmaliyim'})
+  📚 kaynak: internet (bellekteki en yakin soru 0.000) — bellege kaydedildi
+Asistan > Modül bulunamıyor hatası alıyorsanız, lütfen aşağıdaki adımları takip edin: (...)
+
+Siz > python ModuleNotFoundError aliyorum nasil duzeltirim
+  🔧 knowledge_question({'question': 'python ModuleNotFoundError aliyorum nasil duzeltirim'})
+  📚 kaynak: bellek (bellekteki en yakin soru 0.600)
+Asistan > (ilk cevabın neredeyse birebir aynısı — internete hiç çıkılmadı)
+
+Siz > Rust borrow checker hatasi nasil cozulur?
+  📚 kaynak: internet (bellekteki en yakin soru 0.193) — bellege kaydedildi
+```
+
+| Soru | Bellekteki en yakın | Ne yaptı |
+|---|---|---|
+| İlk Python sorusu | 0.000 (bellek boş) | internete çıktı, cevabı **öğrendi** |
+| Aynı sorunun parafrazı | **0.600** (eşik 0.40) | internete **çıkmadı**, bellekten cevapladı |
+| Rust sorusu (yakın konu, kayıt yok) | 0.193 | eşiği geçemedi → yeniden araştırdı, öğrendi |
+| Hava durumu / döviz | — | kendi deterministik araçları; önbelleğe **alınmıyor** |
+
 ## Kurulum
 
 ```bash

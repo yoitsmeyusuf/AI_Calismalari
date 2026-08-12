@@ -18,6 +18,11 @@ import ollama_client
 TIMEOUT = 20
 HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"}
 
+# Wikimedia, tarayici taklidi User-Agent'lari 403'luyor (UA politikasi: kendini
+# tanitan bir istemci istiyor). Ustteki HEADERS ile yedek arama sessizce
+# "Arama yapilamadi" donuyordu; Wikipedia'ya ayri bir UA ile gidiyoruz.
+WIKI_HEADERS = {"User-Agent": "hafta11-ollama-asistan/1.0 (egitim odevi; ollama + chromadb)"}
+
 # WMO hava durumu kodlarindan Turkce aciklamaya (Open-Meteo bu kodlari kullanir).
 WMO_TR = {
     0: "acik", 1: "az bulutlu", 2: "parcali bulutlu", 3: "cok bulutlu",
@@ -97,7 +102,7 @@ def _wikipedia_search(query: str, max_results: int) -> str:
                 "action": "query", "list": "search", "srsearch": query,
                 "srlimit": max_results, "format": "json",
             },
-            headers=HEADERS,
+            headers=WIKI_HEADERS,
             timeout=TIMEOUT,
         ).json()
         items = data.get("query", {}).get("search", [])

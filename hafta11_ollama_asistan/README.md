@@ -192,70 +192,152 @@ orada zaten kurulu; `odevler/.venv` (Python 3.10) `chromadb` içermiyor, onunla
 Kurulum adımı yok: `chroma_db/` ilk soruyla birlikte kendiliğinden oluşuyor,
 git'e girmiyor. Silmek asistanın öğrendiklerini sıfırlar.
 
-## Örnek oturum
+## Örnek konuşmalar (yerelde test)
 
-Boş bellekle başlayan gerçek bir `chat.py` oturumu (kısaltılmadı, sadece
-cevapların uzun kısmı atıldı):
+Aşağıdakiler kendi makinemde koşan gerçek oturumlar; çıktı olduğu gibi
+yapıştırıldı, cevaplar kısaltılmadı. Tek düzenleme: soruları stdin'den
+verdiğim için terminal onları geri yazmıyor, ben `Siz >` satırlarına elle
+ekledim.
+
+### 1) Boş bellekle başlayan tam oturum
+
+`code_rag.py --sifirla` ile bellek sıfırlandı, sonra `chat.py`:
 
 ```
+Ollama Egitim Asistani
+  sohbet modeli   : qwen3:4b
+  embedding modeli: embeddinggemma:latest
   ogrenilmis soru : 0
+  cikmak icin: cik
 
-Siz > Docker container neden hemen kapaniyor?
-  🔧 knowledge_question({'question': 'Docker container neden hemen kapaniyor?'})
+Siz > merhaba, sen kimsin?
+
+Asistan > Merhaba! Ben bir Türkçe konuşan ve yardım eden asistanım. Sorularınızla ilgili herhangi bir konuda yardımcı olmaktan memnun olurum. 😊
+
+Siz > python modulu bulunamiyor hatasi aliyorum ne yapmaliyim
+  🔧 knowledge_question({'question': 'python modulu bulunamiyor hatasi aliyorum ne yapmaliyim'})
   📚 kaynak: internet (bellekteki en yakin soru 0.000) — bellege kaydedildi
-Asistan > Docker container hemen kapanır çünkü Dockerfile'da belirtilen komut
-          geçersizdir veya entrypoint eksik. (...)
 
-Siz > docker konteynerim aninda duruyor sebebi ne olabilir
-  🔧 knowledge_question({'question': 'docker konteynerim aninda duruyor sebebi ne olabilir'})
-  📚 kaynak: bellek (bellekteki en yakin soru 0.643)
-Asistan > Docker konteyneriniz aninda duruyor olabilir çünkü Dockerfile'da
-          belirtilen komut geçersizdir veya entrypoint eksik.
-          Bellekten geldi — eslesen kayitlar:
-          - "Docker container neden hemen kapaniyor?" (benzerlik 0.643)
+Asistan > Modül bulunamıyor hatası alıyorsanız, lütfen aşağıdaki adımları takip edin:
+
+1. **Kurulu modülleri kontrol etme**: `pip list` komutunu çalıştırın. Eğer aradığınız modül listede yoksa, `pip install modul_adi` ile kurun.
+2. **Python yol listesini kontrol etme**: `sys.path` değişkenini yazdırın (örneğin, `import sys; print(sys.path)`). Bu, Python'un modüllerini nerede aradığını gösterir.
+
+İşte yaygın nedenler:
+- Modül adında yazım hatası
+- Modül kurulmamış
+- Python yol listesinde modül bulunmuyor
+
+Daha fazla yardım için lütfen komutları kullanarak detaylı bilgi verin. 😊
+
+Siz > python ModuleNotFoundError aliyorum nasil duzeltirim
+  🔧 knowledge_question({'question': 'python ModuleNotFoundError aliyorum nasil duzeltirim'})
+  📚 kaynak: bellek (bellekteki en yakin soru 0.600)
+
+Asistan > Modül bulunamıyor hatası alıyorsanız aşağıdaki adımları takip edin:
+
+1. **Kurulu modülleri kontrol etme**: `pip list` komutunu çalıştırın. Eğer aradığınız modül listede yoksa, `pip install modul_adi` ile kurun.
+2. **Python yol listesini kontrol etme**: `sys.path` değişkenini yazdırın (örneğin, `import sys; print(sys.path)`). Bu, Python'un modüllerini nerede aradığını gösterir.
+
+İşte yaygın nedenler:
+- Modül adında yazım hatası
+- Modül kurulmamış
+- Python yol listesinde modül bulunmuyor
+
+Daha fazla yardım için lütfen komutları kullanarak detaylı bilgi verin. 😊
+
+Siz > Istanbul'da hava nasil?
+  🔧 get_weather({'city': 'Istanbul'})
+
+Asistan > İstanbul'da şu an az bulutlu, 24.3°C, nem %85, rüzgar 13.4 km/s. 😊
+
+Siz > 50 euro kac TL?
+  🔧 get_exchange_rate({'amount': 50, 'from_currency': 'EUR', 'to_currency': 'TRY'})
+
+Asistan > 50 euro şu an **2756.82 TL**'ye eşdeğerdir (2026-08-12 tarihli kuru). 😊
 
 Siz > Rust borrow checker hatasi nasil cozulur?
   🔧 knowledge_question({'question': 'Rust borrow checker hatasi nasil cozulur?'})
-  📚 kaynak: internet (bellekteki en yakin soru 0.161) — bellege kaydedildi
-Asistan > Rust borrow checker hatası için hata mesajını inceleyin (...)
+  📚 kaynak: internet (bellekteki en yakin soru 0.193) — bellege kaydedildi
+
+Asistan > Rust borrow checker hatası, referansların doğru kapsam ve yaşam süresi ile çözülür. Çözüm için kodda referansları kontrol edin ve mutably referansları kullanmadan önce değerleri taşıyın (move).
 ```
 
-Üç satırın üçü de ayrı bir davranış: **soğuk soru** internete çıkıp öğreniyor,
-**parafraz** 0.643 ile eşiği geçtiği için internete hiç çıkmıyor, **yakın ama
-farklı konu** (Rust) 0.161'de kalıp doğru şekilde yeniden araştırılıyor.
+Bu oturumda görülecek dört şey var:
 
-Dördüncü davranış, 2. kapının belleği reddedip internete düşürmesi. Aynı konuda
-ama farklı **niyette** iki soru sorunca çıkıyor:
+- **Selamlaşmada araç çağrılmadı** — `🔧` satırı yok, sistem promptu bunu
+  söylüyor ve model uyuyor.
+- **İlk Python sorusu** boş bellekle karşılaştı (`en yakin soru 0.000`),
+  internete çıktı, cevabı üretti ve **kaydetti**.
+- **İkinci Python sorusu** aynı şeyin başka kelimelerle sorulmuş hâli. 0.600 ile
+  eşiği (0.40) geçtiği için `📚 kaynak: bellek` — internete hiç çıkılmadı ve
+  cevap ilkiyle neredeyse birebir aynı. Öğrenen belleğin asıl vaadi bu:
+  ikinci kez sormak hem bedava hem tutarlı.
+- **Rust sorusu** aynı alandan ama bellekte yok: 0.193'te kalıp eşiği geçemedi,
+  doğru şekilde yeniden araştırıldı ve o da öğrenildi.
 
-```
-Siz > C# NullReferenceException neden alinir?
-  📚 kaynak: internet — bellege kaydedildi      # "neden" sorusu kaydedildi
-
-Siz > c sharp null referans istisnasi nasil duzeltilir
-  📚 kaynak: internet — bellege kaydedildi      # eşiği geçti ama 2. kapı reddetti:
-                                                # "neden" cevabı "nasıl"ı karşılamıyor
-```
-
-İkisi bellekte ayrı kayıt olarak duruyor; asistan artık hem sebebi hem çözümü
-biliyor. Bellek dosyaya yazıldığı için bu birikim oturumlar arasında kalıcı:
+Oturum sonunda bellek diskte şöyle duruyor (hava durumu ve döviz **yok** —
+onlar kendi deterministik araçlarından geçiyor, önbelleğe alınmıyor):
 
 ```
 $ code_rag.py --liste
 [gemma] bellekte 2 soru var:
-  - C# NullReferenceException neden alinir?
-    2026-08-13 01:31 / internet : C#'da NullReferenceException, null değerine...
-  - c sharp null referans istisnasi nasil duzeltilir
-    2026-08-13 01:32 / internet : Null değer kontrolü yapın veya C# 8.0+ için...
+  - python modulu bulunamiyor hatasi aliyorum ne yapmaliyim
+    2026-08-13 02:07 / internet : Modül bulunamıyor hatası için: 1. `pip list` ile kurulu modülleri kontrol edin. 2. `sys.path` ile Py...
+  - Rust borrow checker hatasi nasil cozulur?
+    2026-08-13 02:10 / internet : Rust borrow checker hatası, referansların doğru kapsam ve yaşam süresi ile çözülür. Çözüm için kodda...
 ```
 
-Diğer üç araç (`get_weather`, `get_exchange_rate`, ham arama) 7. haftadaki gibi
-çalışmaya devam ediyor:
+### 2) Guardrail devrede: model belleği atlamaya çalışıyor
+
+Başka bir koşuda `qwen3:4b` aynı soru için ham aramayı seçti; `chat.py`
+çağrıyı yakalayıp `knowledge_question`'a çevirdi ve cevap yine üç kapıdan
+geçti:
 
 ```
-Siz > 100 dolar kac TL?
-  🔧 get_exchange_rate({'from_currency': 'USD', 'to_currency': 'TRY', 'amount': 100})
-Asistan > 100 USD = 4775.7 TL (2026-08-12 tarihli kur).
+Siz > python modulu bulunamiyor hatasi aliyorum
+  🔧 code_error_fix_search({'query': 'python module not found error'})
+  ⚠️  guardrail: knowledge_question'a yonlendirildi (bellek atlanmasin)
+
+Asistan > Modülü kurun: `pip install modül_adi`. Virtual environment kullanıyorsanız, ortamı etkinleştirin.
+
+(Internetten arandi ve bellege kaydedildi.)
 ```
+
+Aynı soruyu ikinci kez sorduğumda bellekte 1 kayıt vardı ve sayı artmadı —
+yani ham arama isteği yönlendirildikten sonra bellek gerçekten kullanıldı.
+Dikkat çekici ayrıntı: model soruyu araç çağrısında İngilizceye çevirmiş
+(`python module not found error`), belleğe o hâliyle yazılmış, ama Türkçe
+sorulan ikinci soru yine de eşleşti — embedding modeli çok dilli olduğu için
+soru↔soru karşılaştırması diller arasında da çalışıyor.
+
+### 3) İkinci kapı belleği reddedip internete düşürüyor
+
+Aynı konuda ama farklı **niyette** iki soru sorunca çıkan davranış. İkinci soru
+1. kapıyı geçiyor (skorlar yakın) ama kayıtlı "neden" cevabı "nasıl düzeltilir"
+sorusunu karşılamadığı için üretim kapısı reddediyor ve akış internete düşüyor:
+
+```
+Siz > C# NullReferenceException neden alinir?
+  🔧 knowledge_question({'question': 'C# NullReferenceException neden alinir?'})
+  📚 kaynak: internet — bellege kaydedildi
+
+Asistan > C#'da NullReferenceException, null değerine sahip bir nesneyi kullanmaya çalışıldığında oluşur.
+
+Bu hata genellikle bir değişkenin doğru bir şekilde başlatılmadığı veya null nesneler üzerinde metod/property erişimini denemekle ilgili olur. Örneğin, `string name = null;` ve `Console.WriteLine(name.Length);` gibi kodlar hata verir.
+
+Siz > c sharp null referans istisnasi nasil duzeltilir
+  🔧 knowledge_question({'question': 'c sharp null referans istisnasi nasil duzeltilir'})
+  📚 kaynak: internet — bellege kaydedildi
+
+Asistan > Null değer kontrolü yapın veya C# 8.0+ için nullable referans türleri özelliğini etkinleştirin.
+
+Örnek olarak, null kontrolü için `if (obj != null)` veya `obj?.Method()` kullanabilirsiniz. C# 8.0+ için proje dosyasında `<Nullable>enable</Nullable>` ekleyerek nullable referans türlerini etkinleştirin. Bu, kodda null değerlerin kontrol edilmesini zorunlu hale getirir ve hata oluşmasını engeller.
+```
+
+İkisi bellekte ayrı kayıt olarak duruyor; asistan artık hem sebebi hem çözümü
+biliyor. Bu düşme yolu olmasaydı ikinci soruya "Bilmiyorum" cevabı gelecekti —
+hâlbuki internette cevap duruyordu.
 
 ## Not: `think: False` her modelde tutmuyor
 
