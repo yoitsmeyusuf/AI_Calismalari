@@ -1,0 +1,2 @@
+chromadb>=1.0     # vektor veritabani (ogrenilen soru-cevap bellegi)
+requests>=2.31    # Ollama ve web API'leri icin HTTP

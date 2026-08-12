@@ -83,6 +83,9 @@ hafta10_vektor_veritabani/veri/*.jsonl
 # Ödev README'sine girmeyen kendi notlarım (veri seçimi, Chroma kurulumu, çalıştırma)
 hafta10_vektor_veritabani/README_ozet.md
 
+# --- 11. hafta: asistanın öğrendiği soru-cevap belleği (kullandıkça doluyor) ---
+hafta11_ollama_asistan/chroma_db/
+
 # --- Proje: şarkı sözü korpusu ---
 # Kaynak veri setinin MIT lisansı DERLEMEYE ait; şarkı sözlerinin telifi hak
 # sahiplerinde. Bu yüzden korpus git'e girmiyor ve (9./10. haftadan farklı

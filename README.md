@@ -3,8 +3,9 @@
 Türkçe felsefe alanında sıfırdan bir veri seti toplayıp, kendi tokenizer'ımı
 eğitip, 4B'lik bir taban modeli bu veriyle ince ayarlayıp (LoRA), sonucu iki
 ayrı benchmark ile ölçtüğüm ve son olarak bir modeli önce dış API'lerle, sonra
-gerçek bir veritabanıyla konuşturup (tool calling) canlıya aldığım, son iki
-haftada da vektör arama / RAG tarafına geçtiğim 10 haftalık bir çalışma serisi.
+gerçek bir veritabanıyla konuşturup (tool calling) canlıya aldığım, son
+haftalarda da vektör arama / RAG tarafına geçtiğim 11 haftalık bir çalışma
+serisi.
 
 **Alan:** Felsefe (düşünürler, akımlar, temel kavramlar) — Türkçe, tek dilli
 **Taban model:** `unsloth/Qwen3.5-4B` (4bit + LoRA)
@@ -24,15 +25,19 @@ haftada da vektör arama / RAG tarafına geçtiğim 10 haftalık bir çalışma 
 | 8 | [`hafta8_veritabani_ajani/`](hafta8_veritabani_ajani/) | Veritabanına **okuyup yazan** tool calling ajanı (SQLite) + halüsinasyon guardrail'i | [4 araçlı felsefe kitapçısı sipariş asistanı](https://huggingface.co/spaces/yoitsmeyusuf/kitapci-siparis-ajani) |
 | 9 | [`hafta9_benzerlik_veri_seti/`](hafta9_benzerlik_veri_seti/) | Cümle benzerliği veri seti (STS-B ölçeği, 0–5) | [Türkçe cümle çifti veri seti](https://huggingface.co/datasets/yoitsmeyusuf/turkce-cumle-benzerligi) |
 | 10 | [`hafta10_vektor_veritabani/`](hafta10_vektor_veritabani/) | Bölüm tabanlı chunking + ChromaDB vektör araması + eşik analizi (RAG) | [3.138 chunk'lık tıbbi vektör veri seti](https://huggingface.co/datasets/yoitsmeyusuf/turkce-tibbi-vektor-veri-seti) — eşik 0.56, 28/30 |
+| 11 | [`hafta11_ollama_asistan/`](hafta11_ollama_asistan/) | Ollama ile tamamen yerel çalışan araç çağırmalı asistan + kendini dolduran RAG belleği; embedding modeli karşılaştırması | 5 araçlı yerel asistan, üç kapılı topraklama |
 | — | [`proje_persona/`](proje_persona/) | **Bitirme projesi:** FastAPI + sıfırdan Transformer bileşenleri + RAG Persona Chatbot + MiniGPT | Sagopa Kajmer korpusu (262 KB); RAG servisi + karakter düzeyinde GPT |
 
 `common/` iki haftanın paylaştığı kodu tutuyor: `hf_dataset_schema.py` (1 ve 4)
 ve `lora_trainer.py` (3 ve 4). 7. ve 8. hafta serinin diğer haftalarından
 bağımsız çalışır (eğitim gerektirmez; modeli ya Space'in ZeroGPU'sunda ya da
 uzaktan Inference Providers üzerinden çalıştırır). 8. hafta model katmanını
-(`modeller.py`) 7. haftadan olduğu gibi kullanıyor. 9. ve 10. hafta felsefe
+(`modeller.py`) 7. haftadan olduğu gibi kullanıyor. 9., 10. ve 11. hafta felsefe
 domaininden ayrılıyor: 9. hafta cümle benzerliği verisi, 10. hafta Türkçe tıbbi
-makalelerle vektör arama.
+makalelerle vektör arama, 11. hafta vektör aramayı Ollama üzerinde yerel bir
+asistana **öğrenen bellek** olarak bağlıyor — indeks boş başlıyor, asistan
+internetten öğrendiği her soru-cevabı kaydediyor. 11. haftanın iskeleti ders
+reposundan alındı; kaynağı klasörün README'sinde.
 
 Her klasörün kendi `README.md`'si var — neyi neden o şekilde yaptığımı,
 karşılaştığım sorunları ve sonuçları orada anlattım.
